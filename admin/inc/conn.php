@@ -1,3 +1,3 @@
 <?php
-    $link=mysqli_connect("localhost","root","","DSS");
+    $link=mysqli_connect("localhost","root","","parv");
 ?>

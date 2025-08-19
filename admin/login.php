@@ -7,6 +7,7 @@ if(isset($_SESSION['admin']['status']))
   exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
