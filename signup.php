@@ -137,7 +137,19 @@
                           </div>
                           <div class="col-12">
                           <div class="form-group">
-                            <input class="form-control" type="Category" name="cat" placeholder="Work as....">
+                            <select class="form-control" name="cat" required>
+                              <option value="" disabled selected>Work as ...  =></option>
+                                <?php 
+                                    include("inc/conn.php");
+
+                                    $q = "SELECT cat_nm FROM category";
+                                    $res = mysqli_query($link, $q);
+
+                                    while($row = mysqli_fetch_assoc($res)) {
+                                      echo '<option value="'.$row['cat_nm'].'">'.$row['cat_nm'].'</option>';
+                                    }
+                                ?>
+                            </select>
                           </div>
                         </div>
                         </div>
