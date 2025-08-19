@@ -16,16 +16,9 @@
               <div class="header-navigation-area position-relative">
                 <ul class="main-menu nav">
                   <li><a href="index.php"><span>Home</span></a></li>
-                  <li><a href="job-details.php"><span>Service Details</span></a></li>
-                  <li class="has-submenu"><a href="candidate.php"><span>Candidates</span></a></li>
-                   <li class="has-submenu"><a href="#/"><span>Pages</span></a>
-                    <ul class="submenu-nav">
-                      <li><a href="about-us.php"><span>About us</span></a></li>
-                      <li><a href="login.php"><span>Login</span></a></li>
-                      <li><a href="registration.php"><span>Registration</span></a></li>
-                  
-                    </ul>
-                  </li>
+                  <li><a href="service.php"><span>Services</span></a></li>
+                  <li class="has-submenu"><a href="worker.php"><span>Workers</span></a></li>
+                   <li class="has-submenu"><a href="about-us.php"><span>About us</span></a></li>
                   <li><a href="contact.php"><span>Contact</span></a></li>
                 </ul>
               </div>
