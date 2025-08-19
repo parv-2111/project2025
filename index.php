@@ -1,12 +1,16 @@
 <?php
 session_start();
 
-if(! isset($_SESSION['customer']['status']))
-{
-  header("location:login.php");
-  exit;
-}
+if(!isset($_SESSION['user_type'])) 
+  {
+    header("location:login.php");
+    exit;
+  }
+  
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="zxx">

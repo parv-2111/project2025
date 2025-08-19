@@ -16,7 +16,7 @@
               <div class="header-navigation-area position-relative">
                 <ul class="main-menu nav">
                   <li><a href="index.php"><span>Home</span></a></li>
-                  <li><a href="employers-"><span>Service Details</span></a></li>
+                  <li><a href="job-details.php"><span>Service Details</span></a></li>
                   <li class="has-submenu"><a href="candidate.php"><span>Candidates</span></a></li>
                    <li class="has-submenu"><a href="#/"><span>Pages</span></a>
                     <ul class="submenu-nav">
@@ -32,7 +32,13 @@
             </div>
             <div class="header-align-end">
               <div class="header-action-area">
-                <a class="btn-registration">Hello,<?php echo $_SESSION['customer']['email'] ?></a>
+                <?php
+                echo '<a class="btn-registration">Hello, ' . 
+                    ($_SESSION['user_type'] == "customer" ? $_SESSION['customer']['email'] : $_SESSION['worker']['email']) . 
+                      '</a>';
+                ?>
+
+
                 <a class="btn-registration" href="logout.php">LOG OUT</a>
                 <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
                   <i class="icofont-navigation-menu"></i>

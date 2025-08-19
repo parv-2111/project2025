@@ -1,7 +1,11 @@
 <?php
 session_start();
 
-unset($_SESSION['customer']);
+// Clear all session data
+session_unset();
+session_destroy();
 
+// Redirect to login page
 header("location:login.php");
+exit;
 ?>
