@@ -177,23 +177,13 @@ if(!isset($_SESSION['user_type']))
 
   <!--== Start Footer Area Wrapper ==-->
   <footer class="footer-area">
-    <!--== Start Footer Top ==-->
-    <?php
-      include("inc/subscribe.php")
-    ?>  
-    <!--== End Footer Top ==-->
-
+   
     <!--== Start Footer Main ==-->
     <?php
       include("inc/footer.php")
     ?>
     <!--== End Footer Main ==-->
 
-    <!--== Start Footer Bottom ==-->
-      <?php
-        include("inc/copyright.php")
-      ?>
-    <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
 

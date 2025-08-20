@@ -138,7 +138,7 @@
                           <div class="col-12">
                           <div class="form-group">
                             <select class="form-control" name="cat" required>
-                              <option value="" disabled selected>Work as ...  =></option>
+                              <option value="" disabled selected>Work as ...  </option>
                                 <?php 
                                     include("inc/conn.php");
 

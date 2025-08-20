@@ -1,3 +1,26 @@
+<!-- subscribe area -->
+
+<div class="footer-top">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footer-newsletter-content">
+              <h4 class="title">Subscribe for everyday job newsletter.</h4>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="footer-newsletter-form">
+              <form action="contact.php" method="post">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="btn-newsletter" >Subscribe Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Footer area -->
 <div class="footer-main">
       <div class="container pt--0 pb--0">
         <div class="row">
@@ -58,6 +81,20 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Copy right area -->
+
+    <div class="footer-bottom">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="copyright">© 2025 Reserved with DSS(Door step services) <i class="icofont-heart"></i> by <a target="_blank" href="https://www.linkedin.com/in/mehta-parv-349557280">Parv Mehta.</a></p>
             </div>
           </div>
         </div>
