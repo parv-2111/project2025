@@ -1,4 +1,5 @@
 <!-- subscribe area -->
+ <footer class="footer-area">
 
 <div class="footer-top">
       <div class="container pt--0 pb--0">
@@ -100,3 +101,4 @@
         </div>
       </div>
     </div>
+</footer>

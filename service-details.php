@@ -13,40 +13,9 @@ if(!isset($_SESSION['user_type']))
 <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
-    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
-    <meta name="author" content="hastech"/>
-
-    <title>Service Detailes</title>
-
-    <!--== Favicon ==-->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-    <!--== Google Fonts ==-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-
-
-    <!--== Bootstrap CSS ==-->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <!--== Icofont Icon CSS ==-->
-    <link href="assets/css/icofont.css" rel="stylesheet" />
-    <!--== Swiper CSS ==-->
-    <link href="assets/css/swiper.min.css" rel="stylesheet" />
-    <!--== Fancybox Min CSS ==-->
-    <link href="assets/css/fancybox.min.css" rel="stylesheet" />
-    <!--== Aos Min CSS ==-->
-    <link href="assets/css/aos.min.css" rel="stylesheet" />
-
-    <!--== Main Style CSS ==-->
-    <link href="assets/css/style.css" rel="stylesheet" />
-</head>
+<?php
+  include("inc/style.php")
+?>
 
 <body>
 
@@ -55,8 +24,9 @@ if(!isset($_SESSION['user_type']))
   
   <!--== Start Header Wrapper ==-->
   <?php
-    include("inc/top.php")
+  include("inc/top.php")
   ?>
+
   <!--== End Header Wrapper ==-->
   
   <main class="main-content">
@@ -66,12 +36,12 @@ if(!isset($_SESSION['user_type']))
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Employers Details</h2>
+              <h2 class="title">Service Details</h2>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.php">Home</a></li>
                   <li class="breadcrumb-sep">//</li>
-                  <li>Employers</li>
+                  <li>Service Details</li>
                 </ul>
               </nav>
             </div>
@@ -81,291 +51,170 @@ if(!isset($_SESSION['user_type']))
     </div>
     <!--== End Page Header Area Wrapper ==-->
 
-    <!--== Start Employers Details Area Wrapper ==-->
-    <section class="employers-details-area">
+    <!--== Start Job Details Area Wrapper ==-->
+    <section class="job-details-area">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="employers-details-wrap">
-              <div class="employers-details-info">
+            <div class="job-details-wrap">
+              <div class="job-details-info">
                 <div class="thumb">
-                  <img src="assets/img/companies/11.jpg" width="130" height="130" alt="Image-HasTech">
+                  <img src="assets/img/companies/10.jpg" width="130" height="130" alt="Image-HasTech">
                 </div>
                 <div class="content">
-                  <h4 class="title">Mukianso IT Sulution Ltd.</h4>
+                  <h4 class="title">Senior Web Developer</h4>
+                  <h5 class="sub-title">Obelus Concepts Ltd.</h5>
                   <ul class="info-list">
                     <li><i class="icofont-location-pin"></i> New York, USA</li>
                     <li><i class="icofont-phone"></i> +88 456 796 457</li>
                   </ul>
-                  <button type="button" class="btn-theme">Follow Us</button>
-                  <button type="button" class="btn-theme btn-white">Add Review</button>
                 </div>
               </div>
-              <div class="employers-counter">
-                <div class="counter-item">
-                  <h4 class="counter">86</h4>
-                  <h5 class="title">Total jobs</h5>
-                </div>
-                <div class="counter-item">
-                  <h4 class="counter">27</h4>
-                  <h5 class="title">Review</h5>
-                </div>
-                <div class="counter-item">
-                  <h4 class="counter">452</h4>
-                  <h5 class="title">Views</h5>
-                </div>
+              <div class="job-details-price">
+                <h4 class="title">$5000 <span>/monthly</span></h4>
+                <button type="button" class="btn-theme">Apply Now</button>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-7 col-xl-8">
-            <div class="employers-details-item">
+            <div class="job-details-item">
               <div class="content">
-                <h4 class="title">About Employers</h4>
+                <h4 class="title">Description</h4>
                 <p class="desc">It is a long established fact that a reader will be distracted the readable content of page when looking atits layout. The point of using is that has more-or-less normal a distribution of letters, as opposed to usin content publishing packages web page editors. It is a long established fact that a reader will be distracts by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that has look like readable publishing packages and web page editors.</p>
                 <p class="desc">It is a long established fact that a reader will be distracted the readable content of a page when looking atits layout. The point of using is that has more-or-less normal a distribution of letters, as opposed to usin content publishing packages web page editors.</p>
-                <ul class="employers-details-list">
+              </div>
+              <div class="content">
+                <h4 class="title">Responsibilities</h4>
+                <ul class="job-details-list">
                   <li><i class="icofont-check"></i> Developing custom themes (WordPress.org & ThemeForest Standards)</li>
                   <li><i class="icofont-check"></i> Creating reactive website designs</li>
                   <li><i class="icofont-check"></i> Working under strict deadlines</li>
                   <li><i class="icofont-check"></i> Develop page speed optimized themes</li>
                 </ul>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="content mb--0 pb-2">
-                    <h4 class="title">Open Position</h4>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
-                  <!--== Start Recent Job Item ==-->
-                  <div class="recent-job-item recent-job-style3-item">
-                    <div class="company-info">
-                      <div class="logo">
-                        <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                      </div>
-                      <div class="content mb--0">
-                        <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
-                        <p class="address">New York, USA</p>
-                      </div>
-                    </div>
-                    <div class="main-content">
-                      <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
-                      <h5 class="work-type">Full-time</h5>
-                      <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                    </div>
-                    <div class="recent-job-info">
-                      <div class="salary">
-                        <h4>$5000</h4>
-                        <p>/monthly</p>
-                      </div>
-                      <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                    </div>
-                  </div>
-                  <!--== End Recent Job Item ==-->
-                </div>
-                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
-                  <!--== Start Recent Job Item ==-->
-                  <div class="recent-job-item recent-job-style3-item">
-                    <div class="company-info">
-                      <div class="logo">
-                        <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                      </div>
-                      <div class="content mb--0">
-                        <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-                        <p class="address">New York, USA</p>
-                      </div>
-                    </div>
-                    <div class="main-content">
-                      <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-                      <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-                      <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                    </div>
-                    <div class="recent-job-info">
-                      <div class="salary">
-                        <h4>$5000</h4>
-                        <p>/monthly</p>
-                      </div>
-                      <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                    </div>
-                  </div>
-                  <!--== End Recent Job Item ==-->
-                </div>
-                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
-                  <!--== Start Recent Job Item ==-->
-                  <div class="recent-job-item recent-job-style3-item">
-                    <div class="company-info">
-                      <div class="logo">
-                        <a href="company-details.html"><img src="assets/img/companies/w4.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                      </div>
-                      <div class="content">
-                        <h4 class="name"><a href="company-details.html">Obelus Concepts</a></h4>
-                        <p class="address">New York, USA</p>
-                      </div>
-                    </div>
-                    <div class="main-content">
-                      <h3 class="title"><a href="job-details.html">UX Researcher</a></h3>
-                      <h5 class="work-type">Full-time</h5>
-                      <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                    </div>
-                    <div class="recent-job-info">
-                      <div class="salary">
-                        <h4>$5000</h4>
-                        <p>/monthly</p>
-                      </div>
-                      <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                    </div>
-                  </div>
-                  <!--== End Recent Job Item ==-->
-                </div>
-                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
-                  <!--== Start Recent Job Item ==-->
-                  <div class="recent-job-item recent-job-style3-item">
-                    <div class="company-info">
-                      <div class="logo">
-                        <a href="company-details.html"><img src="assets/img/companies/w5.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                      </div>
-                      <div class="content">
-                        <h4 class="name"><a href="company-details.html">Sanguine Skincare</a></h4>
-                        <p class="address">New York, USA</p>
-                      </div>
-                    </div>
-                    <div class="main-content">
-                      <h3 class="title"><a href="job-details.html">Android App Developer</a></h3>
-                      <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                      <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                    </div>
-                    <div class="recent-job-info">
-                      <div class="salary">
-                        <h4>$5000</h4>
-                        <p>/monthly</p>
-                      </div>
-                      <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                    </div>
-                  </div>
-                  <!--== End Recent Job Item ==-->
-                </div>
-                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
-                  <!--== Start Recent Job Item ==-->
-                  <div class="recent-job-item recent-job-style3-item">
-                    <div class="company-info">
-                      <div class="logo">
-                        <a href="company-details.html"><img src="assets/img/companies/w7.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                      </div>
-                      <div class="content">
-                        <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
-                        <p class="address">New York, USA</p>
-                      </div>
-                    </div>
-                    <div class="main-content">
-                      <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
-                      <h5 class="work-type">Full-time</h5>
-                      <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                    </div>
-                    <div class="recent-job-info">
-                      <div class="salary">
-                        <h4>$5000</h4>
-                        <p>/monthly</p>
-                      </div>
-                      <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                    </div>
-                  </div>
-                  <!--== End Recent Job Item ==-->
-                </div>
-                <div class="col-12 col-md-6 col-lg-12 col-xl-6">
-                  <!--== Start Recent Job Item ==-->
-                  <div class="recent-job-item recent-job-style3-item">
-                    <div class="company-info">
-                      <div class="logo">
-                        <a href="company-details.html"><img src="assets/img/companies/w8.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                      </div>
-                      <div class="content">
-                        <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-                        <p class="address">New York, USA</p>
-                      </div>
-                    </div>
-                    <div class="main-content">
-                      <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-                      <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-                      <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                    </div>
-                    <div class="recent-job-info">
-                      <div class="salary">
-                        <h4>$5000</h4>
-                        <p>/monthly</p>
-                      </div>
-                      <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                    </div>
-                  </div>
-                  <!--== End Recent Job Item ==-->
-                </div>
+              <div class="content">
+                <h4 class="title">Requirements</h4>
+                <ul class="job-details-list">
+                  <li><i class="icofont-check"></i> Having approved theme/s on ThemeForest will be given high preference.</li>
+                  <li><i class="icofont-check"></i> Strong knowledge of WordPress Theme Standards</li>
+                  <li><i class="icofont-check"></i> Ability to convert HTML templates into fully functional WordPress themes.</li>
+                  <li><i class="icofont-check"></i> Good knowledge in O OP PHP and front-end stuffs like HTML, CSS, JS, jQuery, etc.</li>
+                  <li><i class="icofont-check"></i> Moderate knowledge in WordPress Core APIs like options, metadata, REST, hooks, settings, etc.</li>
+                  <li><i class="icofont-check"></i> Ability to debug and fix bugs arising from other developer’s code.</li>
+                  <li><i class="icofont-check"></i> Sense of humor</li>
+                  <li><i class="icofont-check"></i> Hard worker and passionate – we are growing super fast</li>
+                </ul>
+              </div>
+              <div class="content">
+                <h4 class="title">Educational Requirements</h4>
+                <p class="desc">It doesn’t matter where you went to college or what your CGPA was as long as you are smart, passionate, ready to work hard, and have fun.</p>
+              </div>
+              <div class="content">
+                <h4 class="title">Working Hours</h4>
+                <ul class="job-details-list">
+                  <li><i class="icofont-check"></i> 8:00 AM - 5:00 PM</li>
+                  <li><i class="icofont-check"></i> Weekly: 5 days.</li>
+                  <li><i class="icofont-check"></i> Weekend: Saturday, Sunday.</li>
+                </ul>
+              </div>
+              <div class="content">
+                <h4 class="title">Benefits</h4>
+                <ul class="job-details-list">
+                  <li><i class="icofont-check"></i> Work in a flat organization where your voice is always heard.</li>
+                  <li><i class="icofont-check"></i> Provident fund.</li>
+                  <li><i class="icofont-check"></i> Gratuity.</li>
+                  <li><i class="icofont-check"></i> Medical Fund.</li>
+                  <li><i class="icofont-check"></i> Having Corporate deals with multiple Hospitals.</li>
+                  <li><i class="icofont-check"></i> Performance bonus.</li>
+                  <li><i class="icofont-check"></i> Increment: Yearly.</li>
+                  <li><i class="icofont-check"></i> Festival Bonus: 2 (Yearly)</li>
+                  <li><i class="icofont-check"></i> Lunch Facilities: Full Subsidize.</li>
+                  <li><i class="icofont-check"></i> Unlimited Tea, Coffee & Snacks.</li>
+                  <li><i class="icofont-check"></i> Annual tour.</li>
+                  <li><i class="icofont-check"></i> Team Outing.</li>
+                  <li><i class="icofont-check"></i> Marriage Bonus and Marriage Leave.</li>
+                  <li><i class="icofont-check"></i> Paternity and Maternity Leave.</li>
+                  <li><i class="icofont-check"></i> Yearly Family Tour.</li>
+                  <li><i class="icofont-check"></i> Knowledge Sharing Session.</li>
+                  <li><i class="icofont-check"></i> Leave Encashment Facilities.</li>
+                  <li><i class="icofont-check"></i> Work with a vibrant team and amazing products.</li>
+                  <li><i class="icofont-check"></i> Table Tennis(Ping Pong) :table_tennis_paddle_and_ball:</li>
+                  <li><i class="icofont-check"></i> Training and learning materials to improve skills.</li>
+                  <li><i class="icofont-check"></i> Last but not the least, WorldClass Work Environment.</li>
+                </ul>
+              </div>
+              <div class="content">
+                <h4 class="title">Statement</h4>
+                <p class="desc">Finate is committed to creating the happiest company working for and is proud to provide equal opportunity to all. All the qualified applicants will receive consideration for employment without regard to race, color, ancestry, religion, sex,  sexual orientation, age, citizenship, marital status, disability, gender identity, or any other basis protected by federal, state, or local law.</p>
+                <a class="btn-apply-now" href="view.php">Apply Now <i class="icofont-long-arrow-right"></i></a>
               </div>
             </div>
           </div>
           <div class="col-lg-5 col-xl-4">
-            <div class="employers-sidebar">
+            <div class="job-sidebar">
               <div class="widget-item">
                 <div class="widget-title">
-                  <h3 class="title">Information</h3>
+                  <h3 class="title">Summery</h3>
                 </div>
                 <div class="summery-info">
                   <table class="table">
                     <tbody>
                       <tr>
-                        <td class="table-name">Categories</td>
+                        <td class="table-name">Job Type</td>
                         <td class="dotted">:</td>
-                        <td>Design & Software</td>
+                        <td data-text-color="#03a84e">Full-time</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Since</td>
+                        <td class="table-name">Category</td>
                         <td class="dotted">:</td>
-                        <td>1996</td>
+                        <td>Development</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Views</td>
+                        <td class="table-name">Posted</td>
                         <td class="dotted">:</td>
-                        <td>568+</td>
+                        <td>20 June, 2021</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Reviews</td>
+                        <td class="table-name">Category</td>
                         <td class="dotted">:</td>
-                        <td>(4.8) <span class="rating"></span></td>
+                        <td>Development</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Total Jobs</td>
+                        <td class="table-name">Salary</td>
                         <td class="dotted">:</td>
-                        <td>87+</td>
+                        <td>$5000 / Monthly</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Location</td>
+                        <td class="table-name">Experience</td>
                         <td class="dotted">:</td>
-                        <td>New York, USA</td>
+                        <td>05 Years</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Team Members</td>
+                        <td class="table-name">Gender</td>
                         <td class="dotted">:</td>
-                        <td>300-500</td>
+                        <td>Male or Female</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Job Success</td>
+                        <td class="table-name">Qualification</td>
                         <td class="dotted">:</td>
-                        <td>98%</td>
+                        <td>BSC, MSC</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Phone</td>
+                        <td class="table-name">Level</td>
                         <td class="dotted">:</td>
-                        <td>+00 568 467 843</td>
+                        <td>Senior</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Email</td>
+                        <td class="table-name">Applied</td>
                         <td class="dotted">:</td>
-                        <td>yourmail@gmail.com</td>
+                        <td>26 Applicant</td>
                       </tr>
                       <tr>
-                        <td class="table-name">Website</td>
+                        <td class="table-name">Application End</td>
                         <td class="dotted">:</td>
-                        <td data-text-color="#ff6000">www.website.com</td>
+                        <td data-text-color="#ff6000">20 November, 2021</td>
                       </tr>
                     </tbody>
                   </table>
@@ -383,38 +232,25 @@ if(!isset($_SESSION['user_type']))
                   <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="icofont-dribbble"></i></a>
                 </div>
               </div>
-              <div class="widget-item widget-contact">
+              <div class="widget-item widget-tag">
                 <div class="widget-title">
-                  <h3 class="title">Contact Now</h3>
+                  <h3 class="title">Tags:</h3>
                 </div>
-                <div class="widget-contact-form">
-                  <form id="contact-form" action="https://whizthemes.com/mail-php/raju/arden/mail.php" method="POST">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input class="form-control" type="text" name="con_name" placeholder="Name:">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input class="form-control" type="email" name="con_email" placeholder="Email:">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <textarea class="form-control" name="con_message" placeholder="Message"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group mb--0">
-                          <button class="btn-theme d-block w-100" type="submit">Send Message</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-
-                  <!--== Message Notification ==-->
-                  <div class="form-message"></div>
+                <div class="widget-tag-list">
+                  <a href="service.php">Cleaning</a>
+                  <a href="service.php">Cleaning Agency</a><br>
+                  <a href="service.php">Business</a>
+                  <a href="service.php">Cleaning</a>
+                  <a href="service.php">Business</a>
+                  <a href="service.php">Cleaning</a>
+                  <a href="service.php">Cleaning Agency</a>
+                  <a href="service.php">Business</a>
+                  <a href="service.php">Cleaning Agency</a>
+                  <a href="service.php">Cleaning</a>
+                  <a href="service.php">Business</a>
+                  <a href="service.php">Business</a>
+                  <a href="service.php">Cleaning Agency</a>
+                  <a href="service.php">Business</a>
                 </div>
               </div>
             </div>
@@ -422,60 +258,27 @@ if(!isset($_SESSION['user_type']))
         </div>
       </div>
     </section>
-    <!--== End Employers Details Area Wrapper ==-->
+    <!--== End Job Details Area Wrapper ==-->
   </main>
 
   <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area">
-    <!--== Start Footer Top ==-->
-    <?php
-      include("inc/subscribe.php")
-    ?>
-    <!--== End Footer Top ==-->
+<?php
+  include("inc/footer.php")
+?>
 
-    <!--== Start Footer Main ==-->
-    <?php
-      include("inc/footer.php")
-    ?>  
-    <!--== End Footer Main ==-->
-
-    <!--== Start Footer Bottom ==-->
-    <?php
-      include("inc/copyright.php")
-    ?>
-    <!--== End Footer Bottom ==-->
-  </footer>
   <!--== End Footer Area Wrapper ==-->
 
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
 
   
+
 <!--=======================Javascript============================-->
 
-<!--=== jQuery Modernizr Min Js ===-->
-<script src="assets/js/modernizr.js"></script>
-<!--=== jQuery Min Js ===-->
-<script src="assets/js/jquery-main.js"></script>
-<!--=== jQuery Migration Min Js ===-->
-<script src="assets/js/jquery-migrate.js"></script>
-<!--=== jQuery Popper Min Js ===-->
-<script src="assets/js/popper.min.js"></script>
-<!--=== jQuery Bootstrap Min Js ===-->
-<script src="assets/js/bootstrap.min.js"></script>
-<!--=== jQuery Swiper Min Js ===-->
-<script src="assets/js/swiper.min.js"></script>
-<!--=== jQuery Fancybox Min Js ===-->
-<script src="assets/js/fancybox.min.js"></script>
-<!--=== jQuery Aos Min Js ===-->
-<script src="assets/js/aos.min.js"></script>
-<!--=== jQuery Counterup Min Js ===-->
-<script src="assets/js/counterup.js"></script>
-<!--=== jQuery Waypoint Js ===-->
-<script src="assets/js/waypoint.js"></script>
+<?php
+  include("inc/script.php")
+?>
 
-<!--=== jQuery Custom Js ===-->
-<script src="assets/js/custom.js"></script>
 
 </body>
 

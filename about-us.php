@@ -14,41 +14,9 @@ if(!isset($_SESSION['user_type']))
 
 <!DOCTYPE html>
 <html lang="zxx">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
-    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
-    <meta name="author" content="hastech"/>
-
-    <title>About Us :: Finate - Job Portal Website Template Using Bootstrap 5</title>
-
-    <!--== Favicon ==-->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
-    <!--== Google Fonts ==-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-
-
-    <!--== Bootstrap CSS ==-->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <!--== Icofont Icon CSS ==-->
-    <link href="assets/css/icofont.css" rel="stylesheet" />
-    <!--== Swiper CSS ==-->
-    <link href="assets/css/swiper.min.css" rel="stylesheet" />
-    <!--== Fancybox Min CSS ==-->
-    <link href="assets/css/fancybox.min.css" rel="stylesheet" />
-    <!--== Aos Min CSS ==-->
-    <link href="assets/css/aos.min.css" rel="stylesheet" />
-
-    <!--== Main Style CSS ==-->
-    <link href="assets/css/style.css" rel="stylesheet" />
-</head>
+<?php
+    include("inc/style.php");
+?>
 
 <body>
 
@@ -71,7 +39,7 @@ if(!isset($_SESSION['user_type']))
               <h2 class="title">About Us</h2>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.php">Home</a></li>
                   <li class="breadcrumb-sep">//</li>
                   <li>About Us</li>
                 </ul>
@@ -103,41 +71,7 @@ if(!isset($_SESSION['user_type']))
                 <h4 class="sub-title">// About Finate</h4>
                 <h3 class="title">Finate help your for get your dream job and build your bright career.</h3>
                 <p class="desc">It is a long established fact that a reader will be distracted the readable content of a page when looking at its layout. The point of using is that has more-or-less normal a distribution of letters, as opposed to using 'Content publishing packages web page editors.</p>
-                <div class="member-join-content" data-aos="fade-right" data-aos-duration="1200">
-                  <div class="member-join-thumb">
-                    <ul>
-                      <li>
-                        <a href="candidate-details.html">
-                          <img src="assets/img/about/member1.png" width="50" height="50" alt="Image-HasTech">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="candidate-details.html">
-                          <img src="assets/img/about/member2.png" width="50" height="50" alt="Image-HasTech">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="candidate-details.html">
-                          <img src="assets/img/about/member3.png" width="50" height="50" alt="Image-HasTech">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="candidate-details.html">
-                          <img src="assets/img/about/member4.png" width="50" height="50" alt="Image-HasTech">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="candidate-details.html">
-                          <img src="assets/img/about/member4.png" width="50" height="50" alt="Image-HasTech">
-                          <span>+</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="member-join-btn">
-                    <a class="join-now-btn" href="job-details.html"><span>+</span> Join Now</a>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -217,12 +151,12 @@ if(!isset($_SESSION['user_type']))
             <!--== Start Team Item ==-->
             <div class="team-item">
               <div class="thumb">
-                <a href="candidate-details.html">
+                <a href="worker-details.php">
                   <img src="assets/img/team/1.jpg" width="160" height="160" alt="Image-HasTech">
                 </a>
               </div>
               <div class="content">
-                <h4 class="title"><a href="candidate-details.html">Lauran Benitez</a></h4>
+                <h4 class="title"><a href="worker-details.php">Lauran Benitez</a></h4>
                 <h5 class="sub-title">Web Designer</h5>
                 <div class="rating-box">
                   <i class="icofont-star"></i>
@@ -232,7 +166,7 @@ if(!isset($_SESSION['user_type']))
                   <i class="icofont-star"></i>
                 </div>
                 <p class="desc">CSS3, HTML5, Javascript Bootstrap, Jquery</p>
-                <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+                <a class="btn-theme btn-white btn-sm" href="worker-details.php">View Profile</a>
               </div>
               <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
               <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
@@ -243,12 +177,12 @@ if(!isset($_SESSION['user_type']))
             <!--== Start Team Item ==-->
             <div class="team-item">
               <div class="thumb">
-                <a href="candidate-details.html">
+                <a href="worker-details.php">
                   <img src="assets/img/team/2.jpg" width="160" height="160" alt="Image-HasTech">
                 </a>
               </div>
               <div class="content">
-                <h4 class="title"><a href="candidate-details.html">Valentine Anders</a></h4>
+                <h4 class="title"><a href="worker-details.php">Valentine Anders</a></h4>
                 <h5 class="sub-title">UI/UX Designer</h5>
                 <div class="rating-box">
                   <i class="icofont-star"></i>
@@ -258,7 +192,7 @@ if(!isset($_SESSION['user_type']))
                   <i class="icofont-star"></i>
                 </div>
                 <p class="desc">CSS3, HTML5, Javascript Bootstrap, Jquery</p>
-                <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+                <a class="btn-theme btn-white btn-sm" href="worker-details.php">View Profile</a>
               </div>
               <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
               <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
@@ -269,12 +203,12 @@ if(!isset($_SESSION['user_type']))
             <!--== Start Team Item ==-->
             <div class="team-item">
               <div class="thumb">
-                <a href="candidate-details.html">
+                <a href="worker-details.php">
                   <img src="assets/img/team/3.jpg" width="160" height="160" alt="Image-HasTech">
                 </a>
               </div>
               <div class="content">
-                <h4 class="title"><a href="candidate-details.html">Shakia Aguilera</a></h4>
+                <h4 class="title"><a href="worker-details.php">Shakia Aguilera</a></h4>
                 <h5 class="sub-title">Web Designer</h5>
                 <div class="rating-box">
                   <i class="icofont-star"></i>
@@ -284,7 +218,7 @@ if(!isset($_SESSION['user_type']))
                   <i class="icofont-star"></i>
                 </div>
                 <p class="desc">CSS3, HTML5, Javascript Bootstrap, Jquery</p>
-                <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+                <a class="btn-theme btn-white btn-sm" href="worker-details.php">View Profile</a>
               </div>
               <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
               <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
@@ -295,12 +229,12 @@ if(!isset($_SESSION['user_type']))
             <!--== Start Team Item ==-->
             <div class="team-item">
               <div class="thumb">
-                <a href="candidate-details.html">
+                <a href="worker-details.php">
                   <img src="assets/img/team/4.jpg" width="160" height="160" alt="Image-HasTech">
                 </a>
               </div>
               <div class="content">
-                <h4 class="title"><a href="candidate-details.html">Assunta Manson</a></h4>
+                <h4 class="title"><a href="worker-details.php">Assunta Manson</a></h4>
                 <h5 class="sub-title">App. Developer</h5>
                 <div class="rating-box">
                   <i class="icofont-star"></i>
@@ -310,7 +244,7 @@ if(!isset($_SESSION['user_type']))
                   <i class="icofont-star"></i>
                 </div>
                 <p class="desc">CSS3, HTML5, Javascript Bootstrap, Jquery</p>
-                <a class="btn-theme btn-white btn-sm" href="candidate-details.html">View Profile</a>
+                <a class="btn-theme btn-white btn-sm" href="worker-details.php">View Profile</a>
               </div>
               <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
               <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
@@ -494,10 +428,6 @@ if(!isset($_SESSION['user_type']))
       <!--== Start Footer Area Wrapper ==-->
   <footer class="footer-area">
     <!--== Start Footer Top ==-->
-    <?php
-      include("inc/subscribe.php")
-    ?>
-    <!--== End Footer Top ==-->
 
     <!--== Start Footer Main ==-->
     <?php
@@ -505,41 +435,19 @@ if(!isset($_SESSION['user_type']))
     ?>  
     <!--== End Footer Main ==-->
 
-    <!--== Start Footer Bottom ==-->
-    <?php
-      include("inc/copyright.php")
-    ?>
-    <!--== End Footer Bottom ==-->
+   
   </footer>
   <!--== End Footer Area Wrapper ==-->
 
+    <!--== Scroll Top Button ==-->
+  <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
   
 
 <!--=======================Javascript============================-->
 
-<!--=== jQuery Modernizr Min Js ===-->
-<script src="assets/js/modernizr.js"></script>
-<!--=== jQuery Min Js ===-->
-<script src="assets/js/jquery-main.js"></script>
-<!--=== jQuery Migration Min Js ===-->
-<script src="assets/js/jquery-migrate.js"></script>
-<!--=== jQuery Popper Min Js ===-->
-<script src="assets/js/popper.min.js"></script>
-<!--=== jQuery Bootstrap Min Js ===-->
-<script src="assets/js/bootstrap.min.js"></script>
-<!--=== jQuery Swiper Min Js ===-->
-<script src="assets/js/swiper.min.js"></script>
-<!--=== jQuery Fancybox Min Js ===-->
-<script src="assets/js/fancybox.min.js"></script>
-<!--=== jQuery Aos Min Js ===-->
-<script src="assets/js/aos.min.js"></script>
-<!--=== jQuery Counterup Min Js ===-->
-<script src="assets/js/counterup.js"></script>
-<!--=== jQuery Waypoint Js ===-->
-<script src="assets/js/waypoint.js"></script>
-
-<!--=== jQuery Custom Js ===-->
-<script src="assets/js/custom.js"></script>
+<?php
+  include("inc/script.php")
+?>
 
 </body>
 
