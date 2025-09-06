@@ -26,10 +26,12 @@ if(!isset($_SESSION['user_type']))
 <!--wrapper start-->
 <div class="wrapper">
   
-  <!--== Start Header Wrapper ==-->
+  <!--== Start Header Wrapper ==--> 
   <?php
     include("inc/top.php")
-  ?>
+  ?>  
+
+  
     <!--== End Header Wrapper ==-->
   
   <main class="main-content">
