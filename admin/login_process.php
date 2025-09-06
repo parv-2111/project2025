@@ -33,9 +33,13 @@ if(! empty($_POST))
 
         $row=mysqli_fetch_assoc($res);
 
+        
+
         if(empty($row))
         {
-            echo "Wrong Username OR Password";
+           $_SESSION['success']="Wrong Username Or Password";
+
+            header("location:login.php");
         }
         else{
             $_SESSION['admin']['email']= $row['a_email'];

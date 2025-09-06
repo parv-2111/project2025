@@ -27,7 +27,7 @@
 
             mysqli_query($link,$q);
 
-            $_SESSION['success']="Done ! Category entered Succesfully.";
+            $_SESSION['success']="Done Category Added Succesfully.";
 
             header("location:category.php");
         }

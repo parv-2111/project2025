@@ -25,6 +25,14 @@ if(isset($_SESSION['admin']['status']))
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
+                  <?php
+                    if( isset($_SESSION['success']))
+                    {
+                      echo '<p class="alert alert-danger">'.$_SESSION['success'].'</p>';
+                      unset($_SESSION['success']);
+                    }
+                  ?>
+
       <form action="login_process.php" method="post">
         <div class="input-group mb-3">
           <input type="email" name="unm" class="form-control" placeholder="Email" >

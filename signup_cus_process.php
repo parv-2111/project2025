@@ -52,7 +52,7 @@
             
             mysqli_query($link,$q);
             echo "You are Succesfully Logined As a Customer.";
-            header("location:login.php");
+            
           
         }
     }
