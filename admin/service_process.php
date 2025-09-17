@@ -25,6 +25,9 @@
         if(empty($wpho)){
             $_SESSION['error']['wpho']="Please Enter Worker Contact Number";
         }
+        else if(!is_numeric($wpho)){
+            $_SESSION['error']['wpho']="Please Enter Numeric Number";
+        }
 
         if(empty($spri)){
             $_SESSION['error']['spri']="Please Enter Service Price";
@@ -49,15 +52,22 @@
             $_SESSION['error']['wexe']="Please Enter Experience";
         }
 
-        if(empty($simg)){
-            $_SESSION['error']['simg']="Please Enter Service Images";
-        }
+        // if(empty($simg)){
+        //     $_SESSION['error']['simg']="Please Enter Service Images";
+        // }
 
-        if(!empty($_SESSION['error'])){
-            header("location:service.php");
-        }
-        else{
-            echo "Well Done Parv";
+         if(!empty($_SESSION['error'])){
+             header("location:service.php");
+         }else{
+           include("inc/conn.php");
+           $t=time();
+           $q="insert into service (s_cat,s_nm,w_nm,s_location,w_phone,s_price,s_desc,s_response,s_benefit,w_experience,s_time) values('".$scat."','".$snm."','".$wnm."','".$sloc."','".$wpho."','".$spri."','".$sdec."','".$sres."','".$sben."','".$wexe."','".$t."')";
+
+        mysqli_query($link,$q);
+
+        $_SESSION['success']='Service Successfully Added !!!';
+        header("location:service.php"); 
+
         }
         
     }

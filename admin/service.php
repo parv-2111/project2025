@@ -133,11 +133,11 @@
                     ?>
                   </div>
                   <div class="form-group">
-                    <label for="wmno">Worker Phone</label>
-                    <input type="tel" class="form-control" id="scat" name="wmno" placeholder="Phone Number">
+                    <label for="wpho">Worker Phone</label>
+                    <input type="tel" class="form-control" id="scat" name="wpho" placeholder="Phone Number">
                     <?php
-                        if(isset($_SESSION['error']['wmno'])){
-                            echo '<font color="red">'.$_SESSION['error']['wmno'].'</font><br />';
+                        if(isset($_SESSION['error']['wpho'])){
+                            echo '<font color="red">'.$_SESSION['error']['wpho'].'</font><br />';
                         }
                     ?>
                   </div>
