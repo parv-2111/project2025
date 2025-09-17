@@ -94,7 +94,7 @@ if(!isset($_SESSION['user_type']))
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="servive-details.php">Senior UI Designer</a></h3>
+                <h3 class="title"><a href="service-details.php">Senior UI Designer</a></h3>
                 <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
                 <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
               </div>

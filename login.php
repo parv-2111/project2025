@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
+<?php
+  session_start();
+?>
 <?php
   include("inc/style.php")
 ?>
@@ -25,6 +27,15 @@
                 <form action="login_process.php" method="post">
                   <div class="row">
                     <div class="col-12">
+                      <div>
+                        <?php
+               if( isset($_SESSION['global']))
+                    {
+                      echo '<p class="alert alert-danger">'.$_SESSION['global'].'</p>';
+                      unset($_SESSION['global']);
+                    }
+                  ?>
+                      </div>
                       <div class="form-group">
                         <input class="form-control" type="email" name="email" placeholder="Email">
                       </div>

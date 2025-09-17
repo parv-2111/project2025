@@ -56,8 +56,10 @@ if(!empty($_POST))
             exit;
         }
 
-        // If not found in both tables
-        echo "Wrong Username OR Password";
+       
+        $_SESSION['global']="Email Or Password is Incorrect";
+
+            header("location:login.php");
     }
 }
 else {

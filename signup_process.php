@@ -20,7 +20,7 @@
         }
         elseif(strlen($pwd)<8)
         {
-            $error[] = "Please Enter a Valid 6 digit Password!";
+            $error[] = "Please Enter a Valid 8 digit Password!";
         }
 
         if(empty($mno))
