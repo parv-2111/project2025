@@ -66,7 +66,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="service_process.php" method="post">
+              <form action="service_process.php" method="post" enctype="multipart/form-data" >
                 <div class="card-body">
                   <?php
                 // if(!empty($_SESSION['error'])){
@@ -104,7 +104,7 @@
 
                              while($cat_row=mysqli_fetch_assoc($cat_res))
                              {
-                                echo '<option>'.$cat_row['cat_nm'].'</option>';
+                                echo '<option value="'.$cat_row['cat_id'].'">'.$cat_row['cat_nm'].'</option>';
                              }
                         ?>
                         <?php
@@ -134,7 +134,7 @@
                   </div>
                   <div class="form-group">
                     <label for="wpho">Worker Phone</label>
-                    <input type="tel" class="form-control" id="scat" name="wpho" placeholder="Phone Number">
+                    <input type="tel" class="form-control" id="wpho" name="wpho" placeholder="Phone Number">
                     <?php
                         if(isset($_SESSION['error']['wpho'])){
                             echo '<font color="red">'.$_SESSION['error']['wpho'].'</font><br />';
@@ -191,7 +191,7 @@
                     <label for="simg">Service Image</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="catimg">
+                        <input type="file" class="custom-file-input" name="simg" id="simg">
                         <label class="custom-file-label" for="simg">Choose file</label>
                       </div>
                       
