@@ -92,7 +92,7 @@ if (!empty($_POST)) {
      *  ================================
      */
     if (!empty($_SESSION['error'])) {
-        header("location:service.php");
+        header("location:sdemo.php");
         exit();
     }
 
@@ -119,11 +119,11 @@ if (!empty($_POST)) {
    if(mysqli_query($link, $q)){
         $_SESSION['success'] = "Service Added Successfully!";
         unset($_SESSION['old']); // 🔥 clear old values after success
-        header("Location: service.php");
+        header("Location: sdemo.php");
         exit;
     } else {
         $_SESSION['error']['db'] = "Error inserting record: " . mysqli_error($link);
-        header("Location: service.php");
+        header("Location: sdemo.php");
         exit;
     }
 }
