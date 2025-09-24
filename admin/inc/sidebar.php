@@ -56,6 +56,12 @@
                   <p>Service</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="service-list.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Service_List</p>
+                </a>
+              </li>
               
           
         </ul>

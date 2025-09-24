@@ -118,7 +118,7 @@ if(!isset($_SESSION['user_type']))
             <div class="section-title text-center">
               <h3 class="title">Popular Category</h3>
               <div class="desc">
-                <p>Many desktop publishing packages and web page editors</p>
+                <p>We Fixes All Your House Holds</p>
               </div>
             </div>
           </div>
@@ -255,9 +255,9 @@ if(!isset($_SESSION['user_type']))
         <div class="row">
           <div class="col-12">
             <div class="section-title text-center">
-              <h3 class="title">Recent Job Circulars</h3>
+              <h3 class="title">Services</h3>
               <div class="desc">
-                <p>Many desktop publishing packages and web page editors</p>
+                <p>We Fixes All Your House Holds</p>
               </div>
             </div>
           </div>
