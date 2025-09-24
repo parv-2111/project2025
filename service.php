@@ -30,7 +30,7 @@ if(!isset($_SESSION['user_type']))
   
   <main class="main-content">
     <!--== Start Page Header Area Wrapper ==-->
-    <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/photos/bg2.jpg">
+    <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/slider/header1.png">
       <div class="container pt--0 pb--0">
         <div class="row">
           <div class="col-12">
@@ -202,7 +202,7 @@ if(!isset($_SESSION['user_type']))
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title"><a href="service-details.php">Product Designer</a></h3>
+                <h3 class="title"><a href="service-details.php">Product Decortion</a></h3>
                 <h5 class="work-type">Full-time</h5>
                 <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
               </div>
@@ -262,10 +262,10 @@ if(!isset($_SESSION['user_type']))
               </div>
               <div class="recent-job-info">
                 <div class="salary">
-                  <h4>$5000</h4>
-                  <p>/monthly</p>
+                  <h4>5000</h4>
+                  <p>yearly</p>
                 </div>
-                <a class="btn-theme btn-sm" href="view-details.php">Apply Now</a>
+                <a class="btn-theme btn-sm" href="view-details.php">View Details</a>
               </div>
             </div>
             <!--== End Recent Job Item ==-->
@@ -298,7 +298,8 @@ if(!isset($_SESSION['user_type']))
             <!--== End Recent Job Item ==-->
           </div>
         </div>
-        <div class="row">
+        
+        <!-- <div class="row">
           <div class="col-lg-12 text-center">
             <div class="pagination-area">
               <nav>
@@ -321,7 +322,7 @@ if(!isset($_SESSION['user_type']))
               </nav>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <!--== End Recent Job Area Wrapper ==-->

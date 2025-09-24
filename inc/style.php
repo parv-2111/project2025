@@ -6,10 +6,10 @@
     <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
     <meta name="author" content="hastech"/>
 
-    <title>Login :: Finate - Job Portal Website Template Using Bootstrap 5</title>
+    <title>DSS[DOOR STEP SERVICES]</title>
 
     <!--== Favicon ==-->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
