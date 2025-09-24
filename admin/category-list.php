@@ -40,12 +40,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Category</h1>
+            <h1 class="m-0">Category List</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Category </li>
+              <li class="breadcrumb-item active">Category List</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -54,55 +54,69 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-     <section class="content">
+        <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">        
+          <div class="col-12">
+           
+            <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Add New Category</h3>
+                <h3 class="card-title">All Categories</h3>
               </div>
               <!-- /.card-header -->
-              <!-- form start -->
-              <form action="category_process.php" method="post">
-                <div class="card-body">
-                  <?php
-               if( isset($_SESSION['success']))
-                    {
+              <div class="card-body">
+                <?php
+                    if(isset($_SESSION['success'])){
                       echo '<p class="alert alert-success">'.$_SESSION['success'].'</p>';
-                      unset($_SESSION['success']);
+
+                      unset($_SESSION['sucess']);
                     }
-                  ?>
-                 
-                  <div class="form-group">
-                    <label for="cat">Category Name</label>
-                    <input type="text" class="form-control" id="cat" name="cnm" placeholder="Enter Category">
-                  </div>
+                ?>
+                <table id="dtable" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>NO</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                        include("inc/conn.php");
 
-                </div>
-                <!-- /.card-body -->
+                        $c_q="select * from category";
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+                        $c_res=mysqli_query($link,$c_q);
+
+                        $no=1;
+
+                        while ($c_row = mysqli_fetch_assoc($c_res)) {
+    echo '<tr>
+            <td>'.$no.'</td>
+            <td><a href="#">'.$c_row['cat_nm'].'</a></td>
+            <td>
+                <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                <a href="category_delete.php?cid='.$c_row['cat_id'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
+                <a href="#" class="btn btn-primary btn-sm">Update</a>
+            </td>
+          </tr>';
+    $no++;
+}
+                    ?>
+                  
+                </table>
+              </div>
+              <!-- /.card-body -->
             </div>
             <!-- /.card -->
-
-            
-
-
           </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          
-          <!--/.col (right) -->
+          <!-- /.col -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.container-fluid -->
     </section>
+    
   </div>
 
  <?php

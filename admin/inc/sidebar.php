@@ -12,22 +12,13 @@
             </a>
           </li>
 
-          <li class="nav-header">EXAMPLES</li>
-          
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
+          <li class="nav-header">Control Panel</li>
           
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pages
+                Admin Control Panel
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -36,6 +27,12 @@
                 <a href="category.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="category-list.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Category_List</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -62,7 +59,6 @@
                   <p>Service_List</p>
                 </a>
               </li>
-              
           
         </ul>
       </nav>

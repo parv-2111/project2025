@@ -65,6 +65,13 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <?php
+                    if(isset($_SESSION['success'])){
+                      echo '<p class="alert alert-success">'.$_SESSION['success'].'</p>';
+
+                      unset($_SESSION['sucess']);
+                    }
+                ?>
                 <table id="dtable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -96,7 +103,7 @@
                                     <td><img src="../service_img/'.$s_row['s_img'].'" width=80</td>
                                     <td>
                                     <a href="#" class="btn btn-warning" btn-sm>Edit</a>
-                                    <a href="#" class="btn btn-danger" btn-sm>Delete</a>
+                                    <a href="product_delete.php?sid='.$s_row['s_id'].'" class="btn btn-danger" btn-sm onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
                                     <a href="#" class="btn btn-primary" btn-sm>Update</a>
                                     </td>
                                  </tr> ';
