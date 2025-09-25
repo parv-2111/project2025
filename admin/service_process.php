@@ -34,8 +34,8 @@ if (!empty($_POST)) {
     }
 
     // Service Location
-    if (empty($sloc)) {
-        $_SESSION['error']['sloc'] = "Please Enter Service Location";
+    if (empty($scit)) {
+        $_SESSION['error']['scit'] = "Please Enter Service Location";
     }
 
     // Worker Phone
@@ -112,13 +112,13 @@ if (!empty($_POST)) {
     $q = "INSERT INTO service 
             (s_cat, s_nm, w_nm, s_location, w_phone, s_price, s_desc, s_response, s_benefit, w_experience, s_time, s_img) 
           VALUES 
-            ('$scat', '$snm', '$wnm', '$sloc', '$wpho', '$spri', '$sdec', '$sres', '$sben', '$wexe', '$t', '$simg_nm')";
+            ('$scat', '$snm', '$wnm', '$scit', '$wpho', '$spri', '$sdec', '$sres', '$sben', '$wexe', '$t', '$simg_nm')";
 
     
 
    if(mysqli_query($link, $q)){
         $_SESSION['success'] = "Service Added Successfully!";
-        unset($_SESSION['old']); // 🔥 clear old values after success
+        unset($_SESSION['old']); //clear old values after success
         header("Location: service.php");
         exit;
     } else {

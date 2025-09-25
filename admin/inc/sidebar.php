@@ -36,15 +36,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="table.php" class="nav-link">
+                <a href="city.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Table</p>
+                  <p>City</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="form.php" class="nav-link">
+                <a href="city-list.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Form</p>
+                  <p>City_List</p>
                 </a>
               </li>
               <li class="nav-item">

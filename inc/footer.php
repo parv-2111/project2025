@@ -29,7 +29,7 @@
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
                 <a href="index.html">
-                  <img class="logo-main" src="assets/img/logo-light-theme.png" alt="Logo" />
+                  <img class="logo-main" src="assets/img/logo_dss.png" alt="Logo" />
                 </a>
               </div>
               <p class="desc">That necessitat ecommerce platform that optimi your store popularised the release</p>

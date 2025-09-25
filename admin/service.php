@@ -126,12 +126,25 @@
 
     <!-- Service Location -->
     <div class="form-group">
-      <label for="sloc">Service Location</label>
-      <input type="text" class="form-control" id="sloc" name="sloc" placeholder="Enter Service Location"
-      value="<?php if(isset($_SESSION['old']['sloc'])) { echo $_SESSION['old']['sloc']; } ?>">
+      <label for="scit">Service Location</label>
+      <select class="form-control" id="scit" name="scit">
+        <option value="0">Select City</option>
+        <?php
+          include("inc/conn.php");
+          $cit_q="select * from city where city_status=1";
+          $cit_res=mysqli_query($link,$cit_q);
+          while($cit_row=mysqli_fetch_assoc($cit_res)) {
+            $selected = '';
+            if(isset($_SESSION['old']['scit']) && $_SESSION['old']['scit'] == $cit_row['city_id']) {
+              $selected = 'selected';
+            }
+            echo '<option value="'.$cit_row['city_nm'].'" '.$selected.'>'.$cit_row['city_nm'].'</option>';
+          }
+        ?>
+      </select>
       <?php
-        if(isset($_SESSION['error']['sloc'])){
-          echo '<font color="red">'.$_SESSION['error']['sloc'].'</font><br />';
+        if(isset($_SESSION['error']['scit'])){
+          echo '<font color="red">'.$_SESSION['error']['scit'].'</font><br />';
         }
       ?>
     </div>

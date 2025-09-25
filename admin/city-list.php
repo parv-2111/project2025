@@ -40,12 +40,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Category List</h1>
+            <h1 class="m-0">City List</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Category List</li>
+              <li class="breadcrumb-item active">City List</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -61,7 +61,7 @@
            
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">All Categories</h3>
+                <h3 class="card-title">All Cities</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -76,7 +76,7 @@
                   <thead>
                   <tr>
                     <th>NO</th>
-                    <th>Name</th>
+                    <th>City</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -84,19 +84,19 @@
                     <?php
                         include("inc/conn.php");
 
-                        $c_q="select * from category";
+                        $ci_q="select * from city";
 
-                        $c_res=mysqli_query($link,$c_q);
+                        $ci_res=mysqli_query($link,$ci_q);
 
                         $no=1;
 
-                        while ($c_row = mysqli_fetch_assoc($c_res)) {
+                        while ($ci_row = mysqli_fetch_assoc($ci_res)) {
     echo '<tr>
             <td>'.$no.'</td>
-            <td><a href="#">'.$c_row['cat_nm'].'</a></td>
+            <td><a href="#">'.$ci_row['city_nm'].'</a></td>
             <td>
                 <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                <a href="category_delete.php?cid='.$c_row['cat_id'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
+                <a href="city_delete.php?citid='.$ci_row['city_id'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
                 <a href="#" class="btn btn-primary btn-sm">Update</a>
             </td>
           </tr>';
