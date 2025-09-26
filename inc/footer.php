@@ -1,104 +1,83 @@
 <!-- subscribe area -->
- <footer class="footer-area">
+<footer class="footer-area">
 
-<div class="footer-top">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="footer-newsletter-content">
-              <h4 class="title">Subscribe for everyday job newsletter.</h4>
+  <!-- Footer area -->
+  <div class="footer-main">
+    <div class="container pt--0 pb--0">
+      <div class="row">
+        
+        <!-- Left Logo and About -->
+        <div class="col-md-6 col-lg-3">
+          <div class="widget-item widget-about">
+            <div class="widget-logo-area">
+              <a href="index.php">
+                <img class="logo-main" src="assets/img/logo_dss.png" alt="Logo" />
+              </a>
+            </div>
+            <p class="desc">Help Cornner <br>
+              Your trusted partner for all technical services <br>
+              and support needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3 col-lg-3">
+          <div class="widget-item nav-menu-item1">
+            <h4 class="widget-title">Quick Links</h4>
+            <div class="widget-menu-wrap">
+              <ul class="nav-menu">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="service.php">Services</a></li>
+                <li><a href="worker.php">Worker</a></li>
+                <li><a href="about-us.php">About Us</a></li>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-7">
-            <div class="footer-newsletter-form">
-              <form action="contact.php" method="post">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit" class="btn-newsletter" >Subscribe Now</button>
-              </form>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-3 col-lg-3">
+          <div class="widget-item nav-menu-item2">
+            <h4 class="widget-title">Contact</h4>
+            <ul class="nav-menu">
+              <li>📧 dss2108@gmail.com</li>
+              <li>📞 +91 7984512238</li>
+              <li>📍shop no 4,5,6,7<br>
+                nr.nageshwar derasr,jamnagar road,Rajkot</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-md-3 col-lg-3">
+          <div class="widget-item nav-menu-item3">
+            <h4 class="widget-title">Follow Us</h4>
+            <div class="social-icons">
+              <a href="https://wa.me/917984512238" target="_blank"><i class="icofont-whatsapp"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="icofont-instagram"></i></a>
+              <a href="https://facebook.com" target="_blank"><i class="icofont-facebook"></i></a>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Copy right area -->
+  <div class="footer-bottom">
+    <div class="container pt--0 pb--0">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer-bottom-content">
+            <p class="copyright">© 2025 Reserved with DSS(Door step services) 
+              <i class="icofont-heart"></i> by 
+              <a target="_blank" href="https://www.linkedin.com/in/mehta-parv-349557280">Parv Mehta.</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
-
-<!-- Footer area -->
-<div class="footer-main">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <div class="widget-item widget-about">
-              <div class="widget-logo-area">
-                <a href="index.html">
-                  <img class="logo-main" src="assets/img/logo_dss.png" alt="Logo" />
-                </a>
-              </div>
-              <p class="desc">That necessitat ecommerce platform that optimi your store popularised the release</p>
-              <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
-                <a href="https://www.skype.com" target="_blank" rel="noopener"><i class="icofont-skype"></i></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <div class="row">
-              <div class="col-md-3 col-lg-3">
-                <div class="widget-item nav-menu-item1">
-                  <h4 class="widget-title">Company</h4>
-                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
-                  <div id="widgetId-1" class="collapse widget-collapse-body">
-                    <div class="collapse-body">
-                      <div class="widget-menu-wrap">
-                        <ul class="nav-menu">
-                          <li><a href="about-us.html">About Us</a></li>
-                          <li><a href="about-us.html">Why Extobot</a></li>
-                          <li><a href="contact.html">Contact With Us</a></li>
-                          <li><a href="contact.html">Our Partners</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-lg-3">
-                <div class="widget-item nav-menu-item2">
-                  <h4 class="widget-title">Resources</h4>
-                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
-                  <div id="widgetId-2" class="collapse widget-collapse-body">
-                    <div class="collapse-body">
-                      <div class="widget-menu-wrap">
-                        <ul class="nav-menu">
-                          <li><a href="account-login.html">Quick Links</a></li>
-                          <li><a href="job.html">Job Packages</a></li>
-                          <li><a href="job.html">Post New Job</a></li>
-                          <li><a href="job.html">Jobs Listing</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!-- Copy right area -->
-
-    <div class="footer-bottom">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-12">
-            <div class="footer-bottom-content">
-              <p class="copyright">© 2025 Reserved with DSS(Door step services) <i class="icofont-heart"></i> by <a target="_blank" href="https://www.linkedin.com/in/mehta-parv-349557280">Parv Mehta.</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 </footer>

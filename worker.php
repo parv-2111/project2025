@@ -47,116 +47,45 @@ if(!isset($_SESSION['user_type'])) {
             <div class="container">
                 <div class="row">
 
-                    <!--== Worker 1 ==-->
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="team-item">
-                            <div class="thumb">
-                                <a href="service-details.php">
-                                    <img src="assets/img/team/1.jpg" width="160" height="160" alt="Worker Image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="service-details.php">Lauran Benitez</a></h4>
-                                <h5 class="sub-title">Web Designer</h5>
-                                <p class="desc">
-                                    Phone: 9876543210<br>
-                                    Price: ₹5000<br>
-                                    Experience: 3 Years
-                                </p>
-                                <a class="btn-theme btn-white btn-sm" href="service-details.php">Read More</a>
-                            </div>
-                            <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                            <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
-                        </div>
-                    </div>
+                    <?php
+                    include("inc/conn.php");
 
-                    <!--== Worker 2 ==-->
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="team-item">
-                            <div class="thumb">
-                                <a href="service-details.php">
-                                    <img src="assets/img/team/2.jpg" width="160" height="160" alt="Worker Image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="service-details.php">Valentine Anders</a></h4>
-                                <h5 class="sub-title">UI/UX Designer</h5>
-                                <p class="desc">
-                                    Phone: 9876543211<br>
-                                    Price: ₹6000<br>
-                                    Experience: 4 Years
-                                </p>
-                                <a class="btn-theme btn-white btn-sm" href="service-details.php">Read More</a>
-                            </div>
-                            <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                            <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
-                        </div>
-                    </div>
+                    $q = "SELECT * FROM service s 
+                          INNER JOIN category c ON s.s_cat = c.cat_id
+                          ORDER BY s.s_id DESC";
+                    $res = mysqli_query($link, $q);
 
-                    <!--== Worker 3 ==-->
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="team-item">
-                            <div class="thumb">
-                                <a href="service-details.php">
-                                    <img src="assets/img/team/3.jpg" width="160" height="160" alt="Worker Image">
-                                </a>
+                    while($row = mysqli_fetch_assoc($res)){
+                    ?>
+                        <!--== Worker Item ==-->
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="team-item">
+                                <div class="thumb">
+                                    <a href="service-details.php?sid=<?= $row['s_id'] ?>">
+                                        <img src="service_img/<?= $row['s_img'] ?>" width="160" height="160" alt="<?= $row['w_nm'] ?>">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">
+                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
+                                    </h4>
+                                    <h5 class="sub-title"><?= $row['s_nm'] ?></h5>
+                                    <p class="desc">
+                                        Phone: <?= $row['w_phone'] ?><br>
+                                        Price: ₹<?= $row['s_price'] ?><br>
+                                        Experience: <?= $row['w_experience'] ?> Years
+                                    </p>
+                                    <a class="btn-theme btn-white btn-sm" href="service-details.php?sid=<?= $row['s_id'] ?>">Book Now</a>
+                                </div>
+                                <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Bookmark"></div>
+                                <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Bookmark"></div>
                             </div>
-                            <div class="content">
-                                <h4 class="title"><a href="service-details.php">Shakia Aguilera</a></h4>
-                                <h5 class="sub-title">Web Designer</h5>
-                                <p class="desc">
-                                    Phone: 9876543212<br>
-                                    Price: ₹5500<br>
-                                    Experience: 2 Years
-                                </p>
-                                <a class="btn-theme btn-white btn-sm" href="service-details.php">Read More</a>                            </div>
-                            <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                            <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
                         </div>
-                    </div>
-
-                    <!--== Worker 4 ==-->
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="team-item">
-                            <div class="thumb">
-                                <a href="service-details.php">
-                                    <img src="assets/img/team/4.jpg" width="160" height="160" alt="Worker Image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="service-details.php">Assunta Manson</a></h4>
-                                <h5 class="sub-title">App. Developer</h5>
-                                <p class="desc">
-                                    Phone: 9876543213<br>
-                                    Price: ₹7000<br>
-                                    Experience: 5 Years
-                                </p>
-                                <a class="btn-theme btn-white btn-sm" href="service-details.php">Read More</a>                            </div>
-                            <div class="bookmark-icon"><img src="assets/img/icons/bookmark1.png" alt="Image-HasTech"></div>
-                            <div class="bookmark-icon-hover"><img src="assets/img/icons/bookmark2.png" alt="Image-HasTech"></div>
-                        </div>
-                    </div>
-
-                    <!--== You can continue this pattern for more workers ==-->
+                    <?php
+                    }
+                    ?>
 
                 </div>
-
-                <!--== Pagination ==-->
-                <!-- <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="pagination-area">
-                            <nav>
-                                <ul class="page-numbers d-inline-flex">
-                                    <li><a class="page-number active" href="worker.php">1</a></li>
-                                    <li><a class="page-number" href="worker.php">2</a></li>
-                                    <li><a class="page-number" href="worker.php">3</a></li>
-                                    <li><a class="page-number next" href="worker.php"><i class="icofont-long-arrow-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div> -->
-
             </div>
         </section>
         <!--== End Team Area Wrapper ==-->

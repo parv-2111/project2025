@@ -161,178 +161,67 @@ $c_res = mysqli_query($link, $c_q);
 
     <!--== Start Recent Job Area Wrapper ==-->
   <section class="recent-job-area bg-color-gray">
-  <div class="container" data-aos="fade-down">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title text-center">
-          <h3 class="title">Services</h3>
-          <div class="desc">
-            <p>We Fix All Your House Holds</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+            <div class="container" data-aos="fade-down">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h3 class="title">Services</h3>
+                            <div class="desc">
+                                <p>We Fix All Your House Holds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <!--== Service 1 ==-->
-      <div class="col-md-6 col-lg-4">
-        <div class="recent-job-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="service-details.php"><img src="assets/img/companies/1.jpg" width="75" height="75" alt="Service Image"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="service-details.php">Darkento Ltd.</a></h4>
-              <p class="address">New York, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="service-details.php">Front-end Development</a></h3>
-            <p class="desc">
-              Worker: Lauran Benitez<br>
-              Experience: 3 Years<br>
-              Price: $5000
-            </p>
-          </div>
-          <div class="recent-job-info">
-            <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
-          </div>
-        </div>
-      </div>
+                <div class="row">
+                    <?php
+                    include("inc/conn.php");
 
-      <!--== Service 2 ==-->
-      <div class="col-md-6 col-lg-4">
-        <div class="recent-job-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="service-details.php"><img src="assets/img/companies/2.jpg" width="75" height="75" alt="Service Image"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="service-details.php">Inspire Fitness Co.</a></h4>
-              <p class="address">Los Angeles, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="service-details.php">Senior UI Design</a></h3>
-            <p class="desc">
-              Worker: Valentine Anders<br>
-              Experience: 4 Years<br>
-              Price: $6000
-            </p>
-          </div>
-          <div class="recent-job-info">
-            <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
-          </div>
-        </div>
-      </div>
+                    $q = "SELECT * FROM service s 
+                          INNER JOIN category c ON s.s_cat = c.cat_id
+                          ORDER BY s.s_id DESC";
+                    $res = mysqli_query($link, $q);
 
-      <!--== Service 3 ==-->
-      <div class="col-md-6 col-lg-4">
-        <div class="recent-job-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="service-details.php"><img src="assets/img/companies/3.jpg" width="75" height="75" alt="Service Image"></a>
+                    while($row = mysqli_fetch_assoc($res)){
+                    ?>
+                        <!--== Service Item ==-->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="recent-job-item">
+                                <div class="company-info">
+                                    <div class="logo">
+                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>">
+                                            <img src="service_img/<?= $row['s_img'] ?>" width="75" height="75" alt="<?= $row['s_nm'] ?>">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="name">
+                                            <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
+                                        </h4>
+                                        <p class="address"><?= $row['cat_nm'] ?></p>
+                                    </div>
+                                </div>
+                                <div class="main-content">
+                                    <h3 class="title">
+                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['s_nm'] ?></a>
+                                    </h3>
+                                    <p class="desc">
+                                        Location: <?= $row['s_location'] ?><br>
+                                        Phone: <?= $row['w_phone'] ?><br>
+                                        Experience: <?= $row['w_experience'] ?> Years<br>
+                                        Price: ₹<?= $row['s_price'] ?>
+                                    </p>
+                                </div>
+                                <div class="recent-job-info">
+                                    <a class="btn-theme btn-sm" href="service-details.php?sid=<?= $row['s_id'] ?>">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
             </div>
-            <div class="content">
-              <h4 class="name"><a href="service-details.php">Cogent Data</a></h4>
-              <p class="address">Chicago, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="service-details.php">Graphic Design</a></h3>
-            <p class="desc">
-              Worker: Shakia Aguilera<br>
-              Experience: 2 Years<br>
-              Price: $5500
-            </p>
-          </div>
-          <div class="recent-job-info">
-            <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!--== Service 4 ==-->
-      <div class="col-md-6 col-lg-4">
-        <div class="recent-job-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="service-details.php"><img src="assets/img/companies/4.jpg" width="75" height="75" alt="Service Image"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="service-details.php">Obelus Concepts</a></h4>
-              <p class="address">New York, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="service-details.php">UX Research</a></h3>
-            <p class="desc">
-              Worker: Assunta Manson<br>
-              Experience: 5 Years<br>
-              Price: $7000
-            </p>
-          </div>
-          <div class="recent-job-info">
-            <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!--== Service 5 ==-->
-      <div class="col-md-6 col-lg-4">
-        <div class="recent-job-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="service-details.php"><img src="assets/img/companies/5.jpg" width="75" height="75" alt="Service Image"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="service-details.php">Sanguine Skincare</a></h4>
-              <p class="address">Boston, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="service-details.php">Android App Development</a></h3>
-            <p class="desc">
-              Worker: David Silva<br>
-              Experience: 3 Years<br>
-              Price: $5000
-            </p>
-          </div>
-          <div class="recent-job-info">
-            <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!--== Service 6 ==-->
-      <div class="col-md-6 col-lg-4">
-        <div class="recent-job-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="service-details.php"><img src="assets/img/companies/6.jpg" width="75" height="75" alt="Service Image"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="service-details.php">Flux Water Gear</a></h4>
-              <p class="address">Seattle, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="service-details.php">Product Design</a></h3>
-            <p class="desc">
-              Worker: Jason Holt<br>
-              Experience: 4 Years<br>
-              Price: $6000
-            </p>
-          </div>
-          <div class="recent-job-info">
-            <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+        </section>
 
     <!--== End Recent Job Area Wrapper ==-->
 

@@ -102,9 +102,9 @@
                                     <td>'.$s_row['s_price'].'</td>
                                     <td><img src="../service_img/'.$s_row['s_img'].'" width=80</td>
                                     <td>
-                                    <a href="#" class="btn btn-warning" btn-sm>Edit</a>
-                                    <a href="product_delete.php?sid='.$s_row['s_id'].'" class="btn btn-danger" btn-sm onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
-                                    <a href="#" class="btn btn-primary" btn-sm>Update</a>
+                                    <a href="service_edit.php?sid='.$s_row['s_id'].'" class="btn btn-warning" btn-sm>Edit</a>
+                                    <a href="service_delete.php?sid='.$s_row['s_id'].'" class="btn btn-danger" btn-sm onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
+                                    <a href="#" class="btn btn-primary" btn-sm>Disable</a>
                                     </td>
                                  </tr> ';
                         $no++;

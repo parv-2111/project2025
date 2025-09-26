@@ -79,7 +79,7 @@ if(isset($_GET['sid'])){
 
               <div class="job-details-price">
                 <h4 class="title">₹<?= $row['s_price'] ?> <span>/service</span></h4>
-                <a class="btn-theme btn-sm" href="service-details.php">Read More</a>
+                <a class="btn-theme btn-sm" href="service-details.php">Book Now</a>
               </div>
             </div>
           </div>
