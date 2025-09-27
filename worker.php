@@ -60,11 +60,6 @@ if(!isset($_SESSION['user_type'])) {
                         <!--== Worker Item ==-->
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="team-item">
-                                <div class="thumb">
-                                    <a href="service-details.php?sid=<?= $row['s_id'] ?>">
-                                        <img src="service_img/<?= $row['s_img'] ?>" width="160" height="160" alt="<?= $row['w_nm'] ?>">
-                                    </a>
-                                </div>
                                 <div class="content">
                                     <h4 class="title">
                                         <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
@@ -73,7 +68,8 @@ if(!isset($_SESSION['user_type'])) {
                                     <p class="desc">
                                         Phone: <?= $row['w_phone'] ?><br>
                                         Price: ₹<?= $row['s_price'] ?><br>
-                                        Experience: <?= $row['w_experience'] ?> Years
+                                        Experience: <?= $row['w_experience'] ?> Years <br>
+                                        Location:<?= $row['s_location'] ?>
                                     </p>
                                     <a class="btn-theme btn-white btn-sm" href="service-details.php?sid=<?= $row['s_id'] ?>">Book Now</a>
                                 </div>

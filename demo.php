@@ -1,123 +1,154 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_type'])) {
-    header("location:login.php");
+include("inc/conn.php");
+
+// Check if service ID is set
+if(!isset($_GET['sid']) || empty($_GET['sid'])){
+    $_SESSION['error'] = "No service selected!";
+    header("Location: service-details.php");
     exit;
 }
+
+$sid = intval($_GET['sid']);
+
+// Fetch service details
+$q = "SELECT s.*, c.cat_nm FROM service s 
+      LEFT JOIN category c ON s.s_cat=c.cat_id 
+      WHERE s.s_id='$sid' LIMIT 1";
+$res = mysqli_query($link, $q);
+
+if(!$res || mysqli_num_rows($res) == 0){
+    $_SESSION['error'] = "Service not found!";
+    header("Location: service-list.php");
+    exit;
+}
+
+$s_row = mysqli_fetch_assoc($res);
+
+// Handle booking form submission
+if(isset($_POST['book_now'])){
+    $name = mysqli_real_escape_string($link, $_POST['name']);
+    $email = mysqli_real_escape_string($link, $_POST['email']);
+    $phone = mysqli_real_escape_string($link, $_POST['phone']);
+    $message = mysqli_real_escape_string($link, $_POST['message']);
+
+    $b_q = "INSERT INTO service_booking (s_id, name, email, phone, message, booking_time) 
+            VALUES ('$sid', '$name', '$email', '$phone', '$message', NOW())";
+
+    if(mysqli_query($link, $b_q)){
+        $_SESSION['success'] = "Service booked successfully! Our worker will contact you soon.";
+        header("Location: service-detail.php?sid=".$sid);
+        exit;
+    } else {
+        $_SESSION['error'] = "Booking failed! Please try again.";
+        header("Location: service-detail.php?sid=".$sid);
+        exit;
+    }
+}
 ?>
-
 <!DOCTYPE html>
-<html lang="zxx">
-
-<?php include("inc/style.php") ?>
-
-<body>
-
-<!--wrapper start-->
+<html lang="en">
+<?php include("inc/style.php"); ?>
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    <!--== Start Header Wrapper ==-->
-    <?php include("inc/top.php") ?>
-    <!--== End Header Wrapper ==-->
+  <?php include("inc/navbar.php"); ?>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="index.php" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">DSS ADMIN PANEL</span>
+    </a>
+    <?php include("inc/sidebar.php"); ?>
+  </aside>
 
-    <main class="main-content">
-        <!--== Start Page Header Area Wrapper ==-->
-        <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/slider/header1.png">
-            <div class="container pt--0 pb--0">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-header-content">
-                            <h2 class="title">Service</h2>
-                            <nav class="breadcrumb-area">
-                                <ul class="breadcrumb justify-content-center">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li class="breadcrumb-sep">//</li>
-                                    <li>Service</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"><?= htmlspecialchars($s_row['s_nm']); ?> Details</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item active"><?= htmlspecialchars($s_row['s_nm']); ?></li>
+            </ol>
+          </div>
         </div>
-        <!--== End Page Header Area Wrapper ==-->
+      </div>
+    </div>
 
-        <!--== Start Team Area Wrapper ==-->
-        <section class="recent-job-area bg-color-gray">
-            <div class="container" data-aos="fade-down">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title text-center">
-                            <h3 class="title">Services</h3>
-                            <div class="desc">
-                                <p>We Fix All Your House Holds</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Success/Error Message -->
+        <?php
+          if(isset($_SESSION['success'])){
+              echo '<p class="alert alert-success">'.$_SESSION['success'].'</p>';
+              unset($_SESSION['success']);
+          }
+          if(isset($_SESSION['error'])){
+              echo '<p class="alert alert-danger">'.$_SESSION['error'].'</p>';
+              unset($_SESSION['error']);
+          }
+        ?>
 
-                <div class="row">
-                    <?php
-                    include("inc/conn.php");
-
-                    $q = "SELECT * FROM service s 
-                          INNER JOIN category c ON s.s_cat = c.cat_id
-                          ORDER BY s.s_id DESC";
-                    $res = mysqli_query($link, $q);
-
-                    while($row = mysqli_fetch_assoc($res)){
-                    ?>
-                        <!--== Service Item ==-->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="recent-job-item">
-                                <div class="company-info">
-                                    <div class="logo">
-                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>">
-                                            <img src="service_img/<?= $row['s_img'] ?>" width="75" height="75" alt="<?= $row['s_nm'] ?>">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <h4 class="name">
-                                            <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
-                                        </h4>
-                                        <p class="address"><?= $row['cat_nm'] ?></p>
-                                    </div>
-                                </div>
-                                <div class="main-content">
-                                    <h3 class="title">
-                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['s_nm'] ?></a>
-                                    </h3>
-                                    <p class="desc">
-                                        Location: <?= $row['s_location'] ?><br>
-                                        Phone: <?= $row['w_phone'] ?><br>
-                                        Experience: <?= $row['w_experience'] ?> Years<br>
-                                        Price: ₹<?= $row['s_price'] ?>
-                                    </p>
-                                </div>
-                                <div class="recent-job-info">
-                                    <a class="btn-theme btn-sm" href="service-details.php?sid=<?= $row['s_id'] ?>">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card card-primary">
+              <div class="card-header"><h3 class="card-title"><?= htmlspecialchars($s_row['s_nm']); ?> Details</h3></div>
+              <div class="card-body">
+                <p><strong>Category:</strong> <?= htmlspecialchars($s_row['cat_nm']); ?></p>
+                <p><strong>Price:</strong> <?= htmlspecialchars($s_row['s_price']); ?></p>
+                <p><strong>Description:</strong> <?= htmlspecialchars($s_row['s_desc']); ?></p>
+                <p><strong>Responsibility:</strong> <?= htmlspecialchars($s_row['s_response']); ?></p>
+                <p><strong>Benefit:</strong> <?= htmlspecialchars($s_row['s_benefit']); ?></p>
+                <p><strong>Worker Name:</strong> <?= htmlspecialchars($s_row['w_nm']); ?></p>
+                <p><strong>Worker Phone:</strong> <?= htmlspecialchars($s_row['w_phone']); ?></p>
+                <p><strong>Experience:</strong> <?= htmlspecialchars($s_row['w_experience']); ?> Years</p>
+                <img src="../service_img/<?= $s_row['s_img']; ?>" width="200">
+              </div>
             </div>
-        </section>
-        <!--== End Team Area Wrapper ==-->
-    </main>
+          </div>
 
-    <!--== Start Footer Area Wrapper ==-->
-    <?php include("inc/footer.php") ?>
-    <!--== End Footer Area Wrapper ==-->
+          <div class="col-md-4">
+            <div class="card card-success">
+              <div class="card-header"><h3 class="card-title">Book This Service</h3></div>
+              <form method="post">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Details / Requirements</label>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" name="book_now" class="btn btn-primary">Book Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
-    <!--== Scroll Top Button ==-->
-    <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
+      </div>
+    </section>
+  </div>
+
+  <?php include("inc/copyright.php"); ?>
+
+  <aside class="control-sidebar control-sidebar-dark"></aside>
 </div>
 
-<!--=======================Javascript============================-->
-<?php include("inc/script.php") ?>
-
+<?php include("inc/script.php"); ?>
 </body>
 </html>

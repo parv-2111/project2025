@@ -1,3 +1,7 @@
+<!-- service-details-old without chatgpt -->
+
+
+
 <?php
 session_start();
 if(!isset($_SESSION['user_type'])) {
@@ -71,15 +75,17 @@ if(isset($_GET['sid'])){
                   <h4 class="title"><?= $row['s_nm'] ?></h4> <!-- Service Name -->
                   <h5 class="sub-title"><?= $row['w_nm'] ?></h5> <!-- Worker Name -->
                   <ul class="info-list">
-                    <li><i class="icofont-location-pin"></i> <?= $row['cat_nm'] ?></li> <!-- Service Category -->
+                    <li><i class="icofont-location-pin"></i> <?= $row['s_location'] ?></li> <!-- Service Category -->
                     <li><i class="icofont-phone"></i> <?= $row['w_phone'] ?></li> <!-- Worker Phone -->
+                    <li><i class="icofont-cart"></i> <?= $row['cat_nm'] ?></li> <!-- Service Category -->
+
                   </ul>
                 </div>
               </div>
 
               <div class="job-details-price">
                 <h4 class="title">₹<?= $row['s_price'] ?> <span>/service</span></h4>
-                <a class="btn-theme btn-sm" href="service-details.php">Book Now</a>
+                <a class="btn-theme btn-sm" href="https://docs.google.com/forms/d/1Awb1PaLgkgLN-Kav1SR7xPjhjKm9xmJ4qvqQ6dkotPY/viewform">Book Now</a>
               </div>
             </div>
           </div>

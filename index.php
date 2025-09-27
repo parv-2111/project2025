@@ -195,14 +195,14 @@ $c_res = mysqli_query($link, $c_q);
                                     </div>
                                     <div class="content">
                                         <h4 class="name">
-                                            <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
+                                            <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['s_nm'] ?></a>
                                         </h4>
                                         <p class="address"><?= $row['cat_nm'] ?></p>
                                     </div>
                                 </div>
                                 <div class="main-content">
                                     <h3 class="title">
-                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['s_nm'] ?></a>
+                                        <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
                                     </h3>
                                     <p class="desc">
                                         Location: <?= $row['s_location'] ?><br>

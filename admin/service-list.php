@@ -69,7 +69,7 @@
                     if(isset($_SESSION['success'])){
                       echo '<p class="alert alert-success">'.$_SESSION['success'].'</p>';
 
-                      unset($_SESSION['sucess']);
+                      unset($_SESSION['success']);
                     }
                 ?>
                 <table id="dtable" class="table table-bordered table-striped">

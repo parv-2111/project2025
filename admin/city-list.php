@@ -95,9 +95,7 @@
             <td>'.$no.'</td>
             <td><a href="#">'.$ci_row['city_nm'].'</a></td>
             <td>
-                <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                <a href="city_delete.php?citid='.$ci_row['city_id'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
-                <a href="#" class="btn btn-primary btn-sm">Update</a>
+               <a href="city_delete.php?citid='.$ci_row['city_id'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
             </td>
           </tr>';
     $no++;

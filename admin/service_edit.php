@@ -1,70 +1,75 @@
 <?php
-
 include("inc/conn.php");
 
-if(!isset($_GET['sid'])){
+// If sid not set, redirect
+if (!isset($_GET['sid']) || empty($_GET['sid'])) {
     header("location:service-list.php");
     exit;
 }
 
-$sid = $_GET['sid'];
+$sid = intval($_GET['sid']);
 
 // Fetch existing service
-$q = "SELECT * FROM service WHERE s_id='$sid'";
+$q = "SELECT * FROM service WHERE s_id='$sid' LIMIT 1";
 $res = mysqli_query($link, $q);
+if (!$res || mysqli_num_rows($res) == 0) {
+    header("location:service-list.php");
+    exit;
+}
 $row = mysqli_fetch_assoc($res);
 
 // Update logic
-if(isset($_POST['update'])){
-    $snm   = $_POST['snm'];
-    $scat  = $_POST['scat'];
-    $wnm   = $_POST['wnm'];
-    $scit  = $_POST['scit'];
-    $wpho  = $_POST['wpho'];
-    $spri  = $_POST['spri'];
-    $sdec  = $_POST['sdec'];
-    $sres  = $_POST['sres'];
-    $sben  = $_POST['sben'];
-    $wexe  = $_POST['wexe'];
+if (isset($_POST['update'])) {
+    $snm  = $_POST['snm'];
+    $scat = $_POST['scat'];
+    $wnm  = $_POST['wnm'];
+    $scit = $_POST['scit'];
+    $wpho = $_POST['wpho'];
+    $spri = $_POST['spri'];
+    $sdec = $_POST['sdec'];
+    $sres = $_POST['sres'];
+    $sben = $_POST['sben'];
+    $wexe = $_POST['wexe'];
 
     // Image handling
-    if(!empty($_FILES['simg']['name'])){
-        $img_name = time()."_".$_FILES['simg']['name'];
+    if (!empty($_FILES['simg']['name'])) {
+        $img_name = time() . "_" . $_FILES['simg']['name'];
         $img_tmp  = $_FILES['simg']['tmp_name'];
-        move_uploaded_file($img_tmp, "../service_img/".$img_name);
+        move_uploaded_file($img_tmp, "../service_img/" . $img_name);
 
         // Delete old image
-        if(!empty($row['s_img']) && file_exists("../service_img/".$row['s_img'])){
-            unlink("../service_img/".$row['s_img']);
+        if (!empty($row['s_img']) && file_exists("../service_img/" . $row['s_img'])) {
+            unlink("../service_img/" . $row['s_img']);
         }
     } else {
         $img_name = $row['s_img'];
     }
 
     $uq = "UPDATE service SET 
-              s_nm='$snm',
-              s_cat='$scat',
-              w_nm='$wnm',
-              s_location='$scit',
-              w_phone='$wpho',
-              s_price='$spri',
-              s_desc='$sdec',
-              s_responsibility='$sres',
-              s_benefit='$sben',
-              w_experience='$wexe',
-              s_img='$img_name'
-           WHERE s_id='$sid'";
+          s_nm='$snm',
+          s_cat='$scat',
+          w_nm='$wnm',
+          s_location='$scit',
+          w_phone='$wpho',
+          s_price='$spri',
+          s_desc='$sdec',
+          s_response='$sres',
+          s_benefit='$sben',
+          w_experience='$wexe',
+          s_img='$img_name'
+       WHERE s_id='$sid'";
 
-    if(mysqli_query($link, $uq)){
-        $_SESSION['success'] = "Service updated successfully!";
-        header("location:service-list.php");
-        exit;
-    } else {
-        echo "Error: ".mysqli_error($link);
-    }
+if (mysqli_query($link, $uq)) {
+    session_start();
+    $_SESSION['success'] = "Service updated successfully!";
+    header("Location: service-list.php");
+    exit;
+} else {
+    echo "Error: " . mysqli_error($link);
+}
+
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include("inc/style.php") ?>
@@ -72,31 +77,45 @@ if(isset($_POST['update'])){
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <?php include("inc/navbar.php") ?>
-  <?php include("inc/sidebar.php") ?>
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
 
-  <!-- Content Wrapper -->
+  <!-- Navbar -->
+  <?php include("inc/navbar.php") ?>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index.php" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">DSS ADMIN PANEL</span>
+    </a>
+    <?php include("inc/sidebar.php") ?>
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header -->
+    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Edit Service</h1>
-          </div>
+          </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item"><a href="service-list.php">Service</a></li>
-              <li class="breadcrumb-item active">Edit</li>
+              <li class="breadcrumb-item active">Edit Service</li>
             </ol>
-          </div>
-        </div>
-      </div>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
+    <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -104,15 +123,16 @@ if(isset($_POST['update'])){
             <!-- general form elements -->
             <div class="card card-primary">        
               <div class="card-header">
-                <h3 class="card-title">Update Service</h3>
+                <h3 class="card-title">Edit Service</h3>
               </div>
+              <!-- /.card-header -->
 
               <!-- form start -->
               <form method="post" enctype="multipart/form-data">
                 <div class="card-body">
 
                   <?php
-                    if(isset($_SESSION['success'])){
+                    if (isset($_SESSION['success'])) {
                       echo '<p class="alert alert-success">'.$_SESSION['success'].'</p>';
                       unset($_SESSION['success']);
                     }
@@ -183,7 +203,7 @@ if(isset($_POST['update'])){
                   <!-- Service Responsibility -->
                   <div class="form-group">
                     <label for="sres">Service Responsibility</label>
-                    <textarea class="form-control" id="sres" name="sres"><?= $row['s_responsibility'] ?></textarea>
+                    <textarea class="form-control" id="sres" name="sres"><?= $row['s_response'] ?></textarea>
                   </div>
 
                   <!-- Service Benefit -->
@@ -228,11 +248,17 @@ if(isset($_POST['update'])){
     </section>
   </div>
 
-  <?php include("inc/copyright.php") ?>
+ <?php include("inc/copyright.php") ?>
 
-  <aside class="control-sidebar control-sidebar-dark"></aside>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
 </div>
+<!-- ./wrapper -->
 
+<!-- jQuery -->
 <?php include("inc/script.php") ?>
 </body>
 </html>
