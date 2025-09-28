@@ -145,12 +145,12 @@ $c_res = mysqli_query($link, $c_q);
       <div class="job-category-item">
         <div class="content">
           <h3 class="title">
-            <a href="worker-details.php?cat_id=<?php echo $c_row['cat_id']; ?>">
+<a href="category.php?cat_id=<?php echo $c_row['cat_id']; ?>">
               <?php echo $c_row['cat_nm']; ?>
             </a>
           </h3>
         </div>
-        <a class="overlay-link" href="worker-details.php?cat_id=<?php echo $c_row['cat_id']; ?>"></a>
+        <a class="overlay-link" href="category.php?cat_id=<?php echo $c_row['cat_id']; ?>"></a>
       </div>
     </div>
   <?php } ?>

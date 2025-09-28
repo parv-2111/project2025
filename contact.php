@@ -63,8 +63,7 @@ if(!isset($_SESSION['user_type']))
                 <div class="info">
                   <h5 class="title">Call Us:</h5>
                   <p>
-                    <a href="tel://568975468">(00) 568 975 468</a><br>
-                    <a href="tel://+88465748937">+88 465 748 937</a>
+                    <p><a href="tel:+917984512238">+91 7984512238</a></p>
                   </p>
                 </div>
               </div>
@@ -75,8 +74,7 @@ if(!isset($_SESSION['user_type']))
                 <div class="info">
                   <h5 class="title">Email:</h5>
                   <p>
-                    <a href="mailto://youremail@gmail.com">youremail@gmail.com</a><br>
-                    <a href="mailto://demomail@gmail.com">demomail@gmail.com</a>
+                     <p><a href="mailto:dss2108@gmail.com">dss2108@gmail.com</a></p>
                   </p>
                 </div>
               </div>
@@ -87,8 +85,9 @@ if(!isset($_SESSION['user_type']))
                 <div class="info">
                   <h5 class="title">Address:</h5>
                   <p>
-                    Sunset Beach, North <br>
-                    Carolina(NC), 28468
+                    shop no 4,5,6,7 <br>
+                    nr. nageshwar derasr, <br>
+                    jamnagar road, Rajkot
                   </p>
                 </div>
               </div>
@@ -134,9 +133,46 @@ if(!isset($_SESSION['user_type']))
             <div class="form-message"></div>
           </div>
           <div class="col-lg-6">
-            <div class="map-area">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1912972.6636523942!2d144.28416561146162!3d-38.05127959850456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sbd!4v1634028820404!5m2!1sen!2sbd"></iframe>
-            </div>
+           <div class="about-content">
+                            <h3 class="title mb-3">Welcome to <span style="color:#ff6a00;">DSS – Door Step Services</span></h3>
+                            <p class="mb-3">
+                                At DSS, we believe in making your life easier by bringing professional 
+                                <strong>home and lifestyle services</strong> directly to your doorstep. 
+                                Whether it’s <strong>Car Wash, Carpentry, Plumbing, Elecronic, Cleaning, Fittings</strong> or other household needs, 
+                                our skilled workers are just one booking away.
+                            </p>
+                            <p class="mb-3">
+                                We pride ourselves on providing <strong>reliable, fast, and affordable</strong> services 
+                                across multiple cities including <strong>Rajkot, Gandhinagar, Surat, Jamnagar, Gondal</strong> and more.
+                            </p>
+
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="feature-box mb-3">
+                                        <h5 class="sub-title">✔ Wide Range of Services</h5>
+                                        <p>From car washing to carpentry, plumbing, and more.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-box mb-3">
+                                        <h5 class="sub-title">✔ Doorstep Convenience</h5>
+                                        <p>Book online, and our workers reach you directly.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-box mb-3">
+                                        <h5 class="sub-title">✔ Skilled Professionals</h5>
+                                        <p>Trained workers to ensure quality service.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-box mb-3">
+                                        <h5 class="sub-title">✔ Multiple Cities</h5>
+                                        <p>Expanding across Gujarat cities for your ease.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
           </div>
         </div>
       </div>
