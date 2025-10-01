@@ -76,6 +76,13 @@ if(!isset($_SESSION['user_type'])) {
                         <!--== Worker Item ==-->
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="team-item">
+                                 <div class="thumb">
+                                <?php 
+                                    $img = !empty($row['s_img']) ? "service_img/".$row['s_img'] : "assets/img/default.png"; 
+                                    ?>
+                                    <img src="<?= $img ?>" width="160" height="160" alt="<?= $row['w_nm'] ?>">
+                            
+                                </div>
                                 <div class="content">
                                     <h4 class="title">
                                         <a href="service-details.php?sid=<?= $row['s_id'] ?>"><?= $row['w_nm'] ?></a>
