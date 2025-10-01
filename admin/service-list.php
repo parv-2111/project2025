@@ -104,7 +104,6 @@
                                     <td>
                                     <a href="service_edit.php?sid='.$s_row['s_id'].'" class="btn btn-warning" btn-sm>Edit</a>
                                     <a href="service_delete.php?sid='.$s_row['s_id'].'" class="btn btn-danger" btn-sm onclick="return confirm(\'Do You Want to Delete?\');">Delete</a>
-                                    <a href="#" class="btn btn-primary" btn-sm>Disable</a>
                                     </td>
                                  </tr> ';
                         $no++;

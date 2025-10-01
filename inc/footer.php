@@ -14,10 +14,12 @@
                 <img class="logo-main" src="assets/img/logo_dss.png" alt="Logo" />
               </a>
             </div>
-            <p class="desc">Help Cornner <br>
-              Your trusted partner for all technical services <br>
-              and support needs.
-            </p>
+            <p class="desc">
+               At DSS, we believe in making your life easier by bringing professional 
+               <strong>home and lifestyle services</strong> directly to your doorstep. 
+               Whether it’s <strong>Car Wash, Carpentry, Plumbing, Elecronic, Cleaning, Fittings</strong> or other household needs, 
+               our skilled workers are just one booking away.
+           </p>
           </div>
         </div>
 

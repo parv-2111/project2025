@@ -85,7 +85,7 @@ if(isset($_GET['sid'])){
 
               <div class="job-details-price">
                 <h4 class="title">₹<?= $row['s_price'] ?> <span>/service</span></h4>
-                <a class="btn-theme btn-sm" href="https://docs.google.com/forms/d/1Awb1PaLgkgLN-Kav1SR7xPjhjKm9xmJ4qvqQ6dkotPY/viewform">Book Now</a>
+                <a class="btn-theme btn-sm" href="https://forms.zohopublic.in/parvmehta08zoho1/form/Booking/formperma/VdR7Xa5AjAhrEzMQQ1EcE5BapSRc_RkBVdmVumV6OZo">Book Now</a>
               </div>
             </div>
           </div>
@@ -103,31 +103,41 @@ if(isset($_GET['sid'])){
 
               <!-- Service Responsibilities -->
               <div class="content">
+                </div>
                 <h4 class="title">Responsibilities</h4>
                 <ul class="job-details-list">
                   <?php 
-                  // If you stored responsibilities as comma separated text
-                  $tasks = explode(",", $row['s_response']);
+                  // If you stored responsibilities as period-separated text
+                  $tasks = explode(".", $row['s_response']);
                   foreach($tasks as $task){
-                      echo '<li><i class="icofont-check"></i> '.trim($task).'</li>';
+                      $task = trim($task);
+                      if(!empty($task)){ // Skip empty tasks
+                          echo '<li><i class="icofont-check"></i> '.$task.'</li>';
+                      }
+                  }
+                  ?>
+                </ul>
+              </div>
+                
+
+              <!-- Service Benefits -->
+              <div class="content">
+                </div>
+                <h4 class="title">Benefits</h4>
+                <ul class="job-details-list">
+                  <?php 
+                  // If you stored responsibilities as period-separated text
+                  $tasks = explode(".", $row['s_benefit']);
+                  foreach($tasks as $task){
+                      $task = trim($task);
+                      if(!empty($task)){ // Skip empty tasks
+                          echo '<li><i class="icofont-check"></i> '.$task.'</li>';
+                      }
                   }
                   ?>
                 </ul>
               </div>
 
-              <!-- Service Benefits -->
-              <div class="content">
-                <h4 class="title">Benefits</h4>
-                <ul class="job-details-list">
-                  <?php 
-                  // If you stored benefits as comma separated text
-                  $benefits = explode(",", $row['s_benefit']);
-                  foreach($benefits as $ben){
-                      echo '<li><i class="icofont-check"></i> '.trim($ben).'</li>';
-                  }
-                  ?>
-                </ul>
-              </div>
 
               <!-- Work Experience -->
               <div class="content">

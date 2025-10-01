@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['user_type'])) 
   {
     header("location:login.php");
@@ -97,26 +96,31 @@ if(!isset($_SESSION['user_type']))
             <!--== Start Contact Form ==-->
             <div class="contact-form">
               <h4 class="contact-form-title">Get in Touch</h4>
-              <form id="contact-form" action="https://whizthemes.com/mail-php/raju/arden/mail.php" method="POST">
+              <form id="contact-form" action="contact_process.php" method="POST">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input class="form-control" type="text" name="con_name" placeholder="Name:">
+                      <input class="form-control" type="text" name="cu_fnm" placeholder="Name:">
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input class="form-control" type="email" name="con_email" placeholder="Email:">
+                      <input class="form-control" type="email" name="cu_email" placeholder="Email:">
+                    </div>
+                  </div>
+                   <div class="col-md-12">
+                    <div class="form-group">
+                      <input class="form-control" type="tel" name="cu_mno" placeholder="Mobile no:">
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input class="form-control" type="text" placeholder="Subject:">
+                      <input class="form-control" type="text" name="cu_add" placeholder="City:">
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea class="form-control" name="con_message" placeholder="Message"></textarea>
+                      <textarea class="form-control" name="cu_message" placeholder="Your Queries:"></textarea>
                     </div>
                   </div>
                   <div class="col-md-12">
