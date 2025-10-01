@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-  include("inc/style.php")
+  include("inc/conn.php");   // Added DB connection
+  include("inc/style.php");
 ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../assets/img/favicon.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
   <!-- Navbar -->
  <?php
-    include("inc/navbar.php")
+    include("inc/navbar.php");
  ?>
   <!-- /.navbar -->
 
@@ -26,11 +22,8 @@
       <span class="brand-text font-weight-light">DSS ADMIN PANEL</span>
     </a>
 
-   
-      
-
 <?php
-  include("inc/sidebar.php")
+  include("inc/sidebar.php");
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -41,81 +34,63 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
+          </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard </li>
+              <li class="breadcrumb-item active">Dashboard</li>
             </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.content-header -->
+
+<?php
+$totalservice  = mysqli_fetch_row(mysqli_query($link, "SELECT COUNT(*) FROM service"))[0];
+$totalworker   = mysqli_fetch_row(mysqli_query($link, "SELECT COUNT(DISTINCT w_nm) FROM service"))[0];
+$totalCategory = mysqli_fetch_row(mysqli_query($link, "SELECT COUNT(*) FROM category"))[0];
+$totalcity     = mysqli_fetch_row(mysqli_query($link, "SELECT COUNT(DISTINCT s_location) FROM service"))[0];
+?>
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-
-                <p>New Orders</p>
+              <div class="small-box bg-info">
+                  <div class="inner">
+                      <h3><?php echo $totalservice; ?></h3>
+                      <p>Total Services</p>
+                  </div>
+                  <a href="service-list.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
-          <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>Bounce Rate</p>
+              <div class="small-box bg-success">
+                  <div class="inner">
+                      <h3><?php echo $totalworker; ?></h3>
+                      <p>Total Workers</p>
+                  </div>
+                  <a href="service-list.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
-          <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
+              <div class="small-box bg-warning">
+                  <div class="inner">
+                      <h3><?php echo $totalCategory; ?></h3>
+                      <p>Total Categories</p>
+                  </div>
+                  <a href="category-list.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
-          <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
+              <div class="small-box bg-danger">
+                  <div class="inner">
+                      <h3><?php echo $totalcity; ?></h3>
+                      <p>Total Cities</p>
+                  </div>
+                  <a href="city-list.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
         </div>
       </div>
@@ -123,20 +98,16 @@
   </div>
 
  <?php
-  include("inc/copyright.php")
+  include("inc/copyright.php");
  ?>
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+  <aside class="control-sidebar control-sidebar-dark"></aside>
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery -->
+<!-- Scripts -->
 <?php
-    include("inc/script.php")
+    include("inc/script.php");
 ?>
 </body>
 </html>
