@@ -119,44 +119,43 @@ if(!isset($_SESSION['user_type'])) {
                     ?>
                 </div>
 
-                <!-- Pagination -->
                <!-- Pagination -->
-<div class="row">
-    <div class="col-lg-12 text-center">
-        <div class="pagination-area">
-            <nav>
-                <ul class="page-numbers d-inline-flex">
-                    <!-- Previous Page -->
-                    <?php if($page > 1): ?>
-                        <li>
-                            <a class="page-number prev" href="?page=<?= ($page-1) ?>">
-                                <i class="icofont-long-arrow-left"></i>
-                            </a>
-                        </li>
-                    <?php endif; ?>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="pagination-area">
+                            <nav>
+                                <ul class="page-numbers d-inline-flex">
+                                    <!-- Previous Page -->
+                                    <?php if($page > 1): ?>
+                                        <li>
+                                            <a class="page-number prev" href="?page=<?= ($page-1) ?>">
+                                                <i class="icofont-long-arrow-left"></i>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
 
-                    <!-- Page Numbers -->
-                    <?php for($i = 1; $i <= $total_pages; $i++): ?>
-                        <li>
-                            <a class="page-number <?= ($i == $page) ? 'active' : '' ?>" href="?page=<?= $i ?>">
-                                <?= $i ?>
-                            </a>
-                        </li>
-                    <?php endfor; ?>
+                                    <!-- Page Numbers -->
+                                    <?php for($i = 1; $i <= $total_pages; $i++): ?>
+                                        <li>
+                                            <a class="page-number <?= ($i == $page) ? 'active' : '' ?>" href="?page=<?= $i ?>">
+                                                <?= $i ?>
+                                            </a>
+                                        </li>
+                                    <?php endfor; ?>
 
-                    <!-- Next Page -->
-                    <?php if($page < $total_pages): ?>
-                        <li>
-                            <a class="page-number next" href="?page=<?= ($page+1) ?>">
-                                <i class="icofont-long-arrow-right"></i>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</div>
+                                    <!-- Next Page -->
+                                    <?php if($page < $total_pages): ?>
+                                        <li>
+                                            <a class="page-number next" href="?page=<?= ($page+1) ?>">
+                                                <i class="icofont-long-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
 
 
             </div>

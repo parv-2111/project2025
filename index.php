@@ -177,9 +177,24 @@ $c_res = mysqli_query($link, $c_q);
                     <?php
                     include("inc/conn.php");
 
+                    // Pagination setup
+                    $limit = 6; // services per page
+                    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                    if($page < 1) $page = 1;
+                    $offset = ($page - 1) * $limit;
+
+                    // Get total services count
+                    $countQuery = "SELECT COUNT(*) AS total FROM service";
+                    $countRes = mysqli_query($link, $countQuery);
+                    $countRow = mysqli_fetch_assoc($countRes);
+                    $total_services = $countRow['total'];
+                    $total_pages = ceil($total_services / $limit);
+
+                    // Fetch services with limit
                     $q = "SELECT * FROM service s 
                           INNER JOIN category c ON s.s_cat = c.cat_id
-                          ORDER BY s.s_id DESC";
+                          ORDER BY s.s_id DESC 
+                          LIMIT $offset, $limit";
                     $res = mysqli_query($link, $q);
 
                     while($row = mysqli_fetch_assoc($res)){
@@ -219,6 +234,44 @@ $c_res = mysqli_query($link, $c_q);
                     <?php
                     }
                     ?>
+
+                    <!-- Pagination -->
+                    <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="pagination-area">
+                            <nav>
+                                <ul class="page-numbers d-inline-flex">
+                                    <!-- Previous Page -->
+                                    <?php if($page > 1): ?>
+                                        <li>
+                                            <a class="page-number prev" href="?page=<?= ($page-1) ?>">
+                                                <i class="icofont-long-arrow-left"></i>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <!-- Page Numbers -->
+                                    <?php for($i = 1; $i <= $total_pages; $i++): ?>
+                                        <li>
+                                            <a class="page-number <?= ($i == $page) ? 'active' : '' ?>" href="?page=<?= $i ?>">
+                                                <?= $i ?>
+                                            </a>
+                                        </li>
+                                    <?php endfor; ?>
+
+                                    <!-- Next Page -->
+                                    <?php if($page < $total_pages): ?>
+                                        <li>
+                                            <a class="page-number next" href="?page=<?= ($page+1) ?>">
+                                                <i class="icofont-long-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+</div>
                 </div>
             </div>
         </section>

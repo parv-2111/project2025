@@ -9,20 +9,18 @@ include("inc/conn.php");
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
+<?php
+  include("inc/preloader.php");
+?>
   <!-- Navbar -->
   <?php include("inc/navbar.php"); ?>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.php" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">DSS ADMIN PANEL</span>
-    </a>
+   <?php
+    include("inc/brandlogo.php")
+   ?>
     <?php include("inc/sidebar.php"); ?>
   </aside>
 
