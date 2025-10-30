@@ -45,7 +45,7 @@ if(!isset($_SESSION['user_type']))
                 <div class="row justify-content-center align-items-center">
                   <div class="col-12 col-lg-8">
                     <div class="slider-content">
-                      <h2 class="title"><span class="counter" data-counterup-delay="80">2,568</span> workers are available <br>You can choose your service</h2>
+                      <h2 class="title"><span class="counter" data-counterup-delay="80">35</span> workers are available <br>You can choose your service</h2>
                       <p class="desc">Find Best Solutions And Workers For Fix Problems.</p>
                     </div>
                   </div>
@@ -56,46 +56,62 @@ if(!isset($_SESSION['user_type']))
                           <div class="row row-gutter-10">
                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                               <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Workers">
+                                <select class="form-control" id="wnm" name="wnm">
+                                    <option value="0">Available Workers</option>
+                                    <?php
+                                        include("inc/conn.php");
+                                        $w_q = "SELECT * FROM service WHERE s_status = 1";
+                                        $w_res = mysqli_query($link, $w_q);
+                                
+                                        while ($w_row = mysqli_fetch_assoc($w_res)) {
+                                            $selected = '';
+                                            if (isset($_SESSION['old']['wnm']) && $_SESSION['old']['wnm'] == $w_row['s_id']) {
+                                                $selected = 'selected';
+                                            }
+                                            echo '<option value="'.$w_row['s_id'].'" '.$selected.'>'.$w_row['w_nm'].'</option>';
+                                        }
+                                    ?>
+                                </select>
+
                               </div>
                             </div>
                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                               <div class="form-group">
                                 <select class="form-control" id="city" name="city">
-    <option value="0">Available Cities</option>
-    <?php
-        include("inc/conn.php");
-        $city_q = "SELECT * FROM city WHERE city_status = 1";
-        $city_res = mysqli_query($link, $city_q);
-        while ($city_row = mysqli_fetch_assoc($city_res)) {
-            $selected = '';
-            if (isset($_SESSION['old']['city']) && $_SESSION['old']['city'] == $city_row['city_id']) {
-                $selected = 'selected';
-            }
-            echo '<option value="'.$city_row['city_id'].'" '.$selected.'>'.$city_row['city_nm'].'</option>';
-        }
-    ?>
-</select>
+                                  <option value="0">Available Cities</option>
+                                  <?php
+                                      include("inc/conn.php");
+                                      $city_q = "SELECT * FROM city WHERE city_status = 1";
+                                      $city_res = mysqli_query($link, $city_q);
+                                      while ($city_row = mysqli_fetch_assoc($city_res)) {
+                                          $selected = '';
+                                          if (isset($_SESSION['old']['city']) && $_SESSION['old']['city'] == $city_row['city_id']) {
+                                              $selected = 'selected';
+                                          }
+                                          echo '<option value="'.$city_row['city_id'].'" '.$selected.'>'.$city_row['city_nm'].'</option>';
+                                      }
+                                  ?>
+                              </select>
 
                               </div>
                             </div>
                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
                               <div class="form-group">
                                 <select class="form-control" id="scat" name="scat">
-        <option value="0">Available Services</option>
-        <?php
-          include("inc/conn.php");
-          $cat_q="select * from category where cat_status=1";
-          $cat_res=mysqli_query($link,$cat_q);
-          while($cat_row=mysqli_fetch_assoc($cat_res)) {
-            $selected = '';
-            if(isset($_SESSION['old']['scat']) && $_SESSION['old']['scat'] == $cat_row['cat_id']) {
-              $selected = 'selected';
-            }
-            echo '<option value="'.$cat_row['cat_id'].'" '.$selected.'>'.$cat_row['cat_nm'].'</option>';
-          }
-        ?>
-      </select>
+                                  <option value="0">Available Services</option>
+                                  <?php
+                                    include("inc/conn.php");
+                                    $cat_q="select * from category where cat_status=1";
+                                    $cat_res=mysqli_query($link,$cat_q);
+                                    while($cat_row=mysqli_fetch_assoc($cat_res)) {
+                                      $selected = '';
+                                      if(isset($_SESSION['old']['scat']) && $_SESSION['old']['scat'] == $cat_row['cat_id']) {
+                                        $selected = 'selected';
+                                      }
+                                      echo '<option value="'.$cat_row['cat_id'].'" '.$selected.'>'.$cat_row['cat_nm'].'</option>';
+                                    }
+                                  ?>
+                                </select>
                               </div>
                             </div>
                             <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
@@ -145,8 +161,8 @@ $c_res = mysqli_query($link, $c_q);
       <div class="job-category-item">
         <div class="content">
           <h3 class="title">
-<a href="category.php?cat_id=<?php echo $c_row['cat_id']; ?>">
-              <?php echo $c_row['cat_nm']; ?>
+            <a href="category.php?cat_id=<?php echo $c_row['cat_id']; ?>">
+                          <?php echo $c_row['cat_nm']; ?>
             </a>
           </h3>
         </div>

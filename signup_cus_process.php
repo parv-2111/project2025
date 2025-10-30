@@ -1,4 +1,5 @@
 <?php
+session_start();
     if(!empty($_POST))
     {
         extract($_POST);
@@ -51,8 +52,8 @@
             $q = "insert into customer(c_nm, c_email, c_mno, c_pwd, c_time) values ('".$cnm."','".$email."','".$mno."','".$pwd."','".$t."')";
             
             mysqli_query($link,$q);
-            echo "You are Succesfully Logined As a Customer.";
-            
+             $_SESSION['message']="You are Succesfully Logined As a Customer.";
+            header("Location: signup.php");
           
         }
     }

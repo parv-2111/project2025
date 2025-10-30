@@ -1,4 +1,5 @@
 <?php
+session_start();
     if(!empty($_POST))
     {
         extract($_POST);
@@ -51,8 +52,10 @@
             $q = "insert into signin(u_fnm, u_email, u_mno, u_pwd, u_time) values ('".$fnm."','".$email."','".$mno."','".$pwd."','".$t."')";
             
             mysqli_query($link,$q);
-            echo "Record Successfully entered.";
-          
+            
+           $_SESSION['message']="Record Successfully entered.";
+           header("Location: signup.php");
+
         }
     }
     else

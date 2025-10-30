@@ -1,5 +1,8 @@
 
 <!DOCTYPE html>
+<?php
+  session_start();
+?>  
 <html lang="zxx">
 
 <?php
@@ -41,6 +44,15 @@
                   <form action="signup_cus_process.php" method="Post">
                       <div class="row">
                         <div class="col-12">
+                          <div>
+                            <?php
+                            if( isset($_SESSION['message']))
+                                 {
+                                   echo '<p class="alert alert-success">'.$_SESSION['message'].'</p>';
+                                   unset($_SESSION['message']);
+                                  }
+                                   ?>
+                          </div>
                           <div class="form-group">
                             <input class="form-control" type="name" name="cnm" placeholder="Full Name">
                           </div>
@@ -60,16 +72,7 @@
                             <input class="form-control" type="tel" name="mno" placeholder="Contact Number">
                           </div>
                        </div>
-                        <div class="col-12">
-                          <div class="form-group">
-                            <div class="remember-forgot-info">
-                              <div class="remember">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">Aaccept our terms and conditions and privacy policy.</label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        
                         <div class="col-12">
                           <div class="form-group">
                             <button type="submit" class="btn-theme">Register Now</button>
@@ -86,6 +89,13 @@
                   <form action="signup_work_process.php" method="Post">
                       <div class="row">
                         <div class="col-12">
+                          <?php
+                          if (isset($_SESSION['message'])) {
+                            echo '<p class="alert alert-success">'.$_SESSION['message'].'</p>';
+                            unset($_SESSION['message']);
+                          }
+                            ?>
+
                           <div class="form-group">
                             <input class="form-control" type="name" name="enm" placeholder="Full Name">
                           </div>
@@ -122,16 +132,7 @@
                           </div>
                         </div>
                         </div>
-                        <div class="col-12">
-                          <div class="form-group">
-                            <div class="remember-forgot-info">
-                              <div class="remember">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">Aaccept our terms and conditions and privacy policy.</label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        
                         <div class="col-12">
                           <div class="form-group">
                             <button type="submit" class="btn-theme">Register Now</button>

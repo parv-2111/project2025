@@ -45,19 +45,7 @@
                         <input class="form-control" type="password" name="pwd" placeholder="Password">
                       </div>
                     </div>
-                    <div class="col-12">
-                      <div class="form-group">
-                        <div class="remember-forgot-info">
-                          <div class="remember">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">Remember me</label>
-                          </div>
-                          <div class="forgot-password">
-                            <a href="#/">Forgot Password?</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
                     <div class="col-12">                                                                                                                                                
                       <div class="form-group">                        
                         <button type="submit" class="btn-theme">LOG IN</button>                                                                                                                                    

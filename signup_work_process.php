@@ -1,4 +1,5 @@
 <?php
+session_start();
     if(!empty($_POST))
     {
         extract($_POST);
@@ -56,8 +57,8 @@
             $q = "insert into worker(e_nm, e_email, e_mno, e_pwd, e_cat, e_time) values ('".$enm."','".$email."','".$mno."','".$pwd."','".$cat."','".$t."')";
             
             mysqli_query($link,$q);
-            echo "You are Succesfully Logined As a Worker.";
-          
+            $_SESSION['message']="You are Succesfully Logined As a Worker.";
+            header("Location: signup.php");
         }
     }
     else
